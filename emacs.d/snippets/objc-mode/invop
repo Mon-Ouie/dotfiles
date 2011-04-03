@@ -1,0 +1,6 @@
+NSInvocationOperation *${1:op} = [[NSInvocationOperation alloc]
+		      	          initWithTarget:${2:self}
+		     		        selector:@selector($3)
+				          object:${4:nil}];
+[${5:queue} addOperation:$1];
+[$1 release];

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ctxt
+# key: ctxt
+# --
+context ${1:something} do
+  $0
+end

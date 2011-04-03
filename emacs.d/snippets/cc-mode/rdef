@@ -1,0 +1,1 @@
+rb_define_method(${1:klass}, "${2:name}", ${3:func}, ${4:argc});

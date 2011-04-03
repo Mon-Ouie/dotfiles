@@ -1,0 +1,1 @@
+[${1:array} setObject:${2:object} forKey:${3:key}];

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: af
+# key: af
+# --
+attach_function :${1:name}, [${2:args}], :${3:ret}

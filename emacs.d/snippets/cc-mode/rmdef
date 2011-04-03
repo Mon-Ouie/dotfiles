@@ -1,0 +1,1 @@
+rb_define_module_function(${1:klass}, "${2:name}", ${3:func}, ${4:argc});

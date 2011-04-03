@@ -1,0 +1,1 @@
+[${1:array} objectAtIndex:${2:i}]

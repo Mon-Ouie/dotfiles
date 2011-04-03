@@ -1,0 +1,3 @@
+NSAutoreleasePool ${1:pool} = [[NSAutoreleasePool alloc] init];
+$0
+[$1 drain];

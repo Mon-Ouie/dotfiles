@@ -1,0 +1,4 @@
+#name : mprop
+# --
+@property (readonly) ${2:NSObject} ${1:property};
+- (BOOL)has${1:$(capitalize text)};

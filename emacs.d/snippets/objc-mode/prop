@@ -1,0 +1,1 @@
+@property (${1:nonatomic, retain}) ${2:NSObject *}${3:prop};

@@ -1,0 +1,2 @@
+${1:type} *${2:obj} = NULL;
+Data_Get_Struct(${3:self}, $1, $2);

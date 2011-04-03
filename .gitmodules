@@ -1,0 +1,7 @@
+[submodule "zsh-syntax-highlighting"]
+	path = zsh-syntax-highlighting
+	url = https://github.com/nicoulaj/zsh-syntax-highlighting.git
+
+[submodule "el-get"]
+           path = "emacs.d/vendor/el-get"
+           url  = https://github.com/dimitri/el-get.git

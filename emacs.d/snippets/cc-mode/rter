@@ -1,0 +1,2 @@
+rb_raise(rb_eTypeError, "Can't convert %s into ${1:Object}",
+         ${3:RAY_OBJ_CLASSNAME(${2:obj})});

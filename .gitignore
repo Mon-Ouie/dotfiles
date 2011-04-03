@@ -1,0 +1,9 @@
+backup/
+/emacs.d/abbrev_defs
+/emacs.d/ac-comphist.dat
+/emacs.d/auto-save-list/
+/emacs.d/el-get/
+/emacs.d/elpa/
+/emacs.d/flymake.tmp/
+.svn
+/emacs.d/url/cookies

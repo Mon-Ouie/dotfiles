@@ -1,0 +1,4 @@
+${1:klass} = rb_define_class_under(${2:namespace}, "${3:Name}", ${4:rb_cObject});
+
+${6:rb_define_alloc_func($1, ${5:alloc});}
+${8:rb_define_method($1, "initialize", ${7:initialize});}

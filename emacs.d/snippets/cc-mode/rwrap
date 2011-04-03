@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: rwrap
+# key: rwrap
+# --
+${1:type} *${2:obj} = ${3:new $1};
+${6:return }Data_Wrap_Struct(${4:klass}, NULL, ${5:free}, $2);

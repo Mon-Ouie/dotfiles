@@ -1,0 +1,1 @@
+rb_scan_args(${1:argc}, ${2:argv}, "${3:fmt}", ${4:rest});
