@@ -1,1 +1,0 @@
-(:name csv-mode :type http :url "http://centaur.maths.qmul.ac.uk/Emacs/files/csv-mode.el")

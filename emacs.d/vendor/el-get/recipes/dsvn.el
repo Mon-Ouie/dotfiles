@@ -1,1 +1,0 @@
-(:name dsvn :type http :url "http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/dsvn.el")

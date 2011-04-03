@@ -2,6 +2,6 @@
 	path = zsh-syntax-highlighting
 	url = https://github.com/nicoulaj/zsh-syntax-highlighting.git
 
-[submodule "el-get"]
-           path = "emacs.d/vendor/el-get"
-           url  = https://github.com/dimitri/el-get.git
+[submodule "emacs.d/vendor/el-get"]
+	path = emacs.d/vendor/el-get
+	url = https://github.com/dimitri/el-get.git

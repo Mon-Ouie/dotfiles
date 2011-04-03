@@ -1,1 +1,0 @@
-(:name diff-git :type git :url "https://github.com/alanfalloon/diff-git.el.git")

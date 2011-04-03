@@ -13,7 +13,7 @@ backup_file() {
 
 backup_dir() {
     if [[ -e $2 ]]; then
-        cp -P $2 backup
+        cp -r $2 backup
         rm -rf $2
     fi
 
