@@ -24,7 +24,11 @@ colors
 export EDITOR="emacsclient -t"
 export BROWSER=firefox
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+if [[ -s /usr/local/bin/brew ]]; then
+    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+else
+    export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+fi
 
 export CFLAGS="-I/usr/local/include"
 export LDFLAGS="-L/usr/local/lib"
