@@ -107,6 +107,10 @@ alias ..='cd ..'
 alias weechat='weechat-curses'
 alias rmpc='mpc --host=192.168.1.9'
 
+if [[ $HOST == "arch-desktop" ]]; then
+    alias ls="ls --color"
+fi
+
 compctl -/ cd
 
 PROMPT=$'%B%F{}[%b%F{green}%~%F{}%B]==[%b%F{blue}%*%B%F{}]%F{red}==>%F{white}%b'
