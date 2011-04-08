@@ -29,6 +29,10 @@
 ;; Colors in compile-mode
 (require 'ansi-color)
 
+(ansi-color-map-update 'ansi-color-names-vector
+                       ["#3b3b3b" "#ff6b6b" "#a3d46e" "#eaca75" "#435e87"
+                        "#cf8243" "#789ec6" "#ffffff"])
+
 (defun colorize-compilation-buffer()
   (toggle-read-only)
   (ansi-color-apply-on-region (point-min) (point-max))
