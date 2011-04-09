@@ -23,6 +23,9 @@
 	       :load "haskell-mode.el")
         (:name cmake-mode)
         (:name lua-mode)
+        (:name markdown-mode)
+        (:name rhtml-mode)
+        (:name pkgbuild-mode)
 
         (:name gist :type git
                :url "git://github.com/defunkt/gist.el"
