@@ -1,0 +1,37 @@
+[user]
+        name = Mon ouïe
+        email = mon.ouie@gmail.com
+[apply]
+        whitespace = nowarn
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = blue bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = magenta
+  untracked = cyan
+[gui]
+
+[branch]
+        autosetuprebase = always
+[alias]
+        s = status
+        co = checkout
+        b = branch
+        ci = commit
+        ed = commit --amend
+        d = diff
+        sm = submodule
+        cl = clone
+[include]
+        path = github.gitconfig

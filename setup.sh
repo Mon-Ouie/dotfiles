@@ -30,6 +30,7 @@ backup_file pryrc.rb      ~/.pryrc
 backup_file rtorrent.conf ~/.rtorrent.rc
 backup_file Xdefaults     ~/.Xdefaults
 backup_file gemrc         ~/.gemrc
+backup_file gitconfig     ~/.gitconfig
 
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 backup_dir emacs.d                 ~/.emacs.d
