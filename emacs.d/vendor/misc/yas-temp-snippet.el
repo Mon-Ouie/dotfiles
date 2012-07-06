@@ -1,3 +1,5 @@
+;; For the record, I wrote this one myself!
+
 (defvar yas/temp-snippet nil
   "Content of the temporary snippet")
 
