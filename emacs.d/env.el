@@ -5,4 +5,4 @@
     (setenv "PATH" (concat "/usr/texbin" path-separator
                            (getenv "PATH"))))
 
-(setenv "LC_CTYPE" "fr_fr.UTF-8")
+(setenv "LC_CTYPE" "en_US.UTF-8")
