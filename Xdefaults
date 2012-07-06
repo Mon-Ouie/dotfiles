@@ -1,0 +1,147 @@
+Xft*antialias: true
+
+!xterm*foreground:        #FFFFFF
+xterm*background:        #000000
+xterm*dynamicColors:     true
+xterm*utf8:              2
+xterm*eightBitInput:     true
+xterm*saveLines:         512
+xterm*scrollTtyKeypress: true
+xterm*scrollTtyOutput:   false
+xterm*multiScroll:       true
+xterm*toolBar:           false
+
+urxvt*depth:             32
+
+urxvt*background:        rgba:0000/0000/0000/9fff
+urxvt2*background:       rgba:0000/0000/0000/9fff
+urxvt1*background:       rgba:0000/0000/0000/9fff
+
+!urxvt*background:        rgba:9a00/9a00/9a00/9fff
+!urxvt2*background:       rgba:9a00/9a00/9a00/9fff
+!urxvt1*background:       rgba:9a00/9a00/9a00/9fff
+
+URxvt.background:        rgba:0000/0000/0000/9fff
+
+URxvt.perl-lib:        /home/kilian/code/dotfiles/urxvt
+URxvt.perl-ext-common: default,keyboard-select,url-select,clipboard
+
+URxvt.font:              xft:Mensch:pixelsize=13
+URxvt.boldFont:          xft:Mensch:pixelsize=13:bold
+URxvt.italicFont:        xft:Mensch:pixelsize=13:italic
+URxvt.boldItalicFont:    xft:Mensch:pixelsize=13:italic:bold
+
+URxvt.scrollBar:         False
+URxvt.urlLauncher:       firefox
+
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.copyCommand:       xclip -i -selection clipboard
+URxvt.pasteCommand:      xclip -o -selection clipboard
+
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+
+URxvt.underlineURLs:     true
+
+URxvt.depth:             32
+URxvt.urgentOnBell:      true
+
+URxvt.visualBell:        true
+
+! Light theme
+!*background:             rgba:9a00/9a00/9a00/9fff
+!*foreground:             #000000
+
+! Black
+!*color0:                 #000000
+!*color8:                 #000000
+
+! Red
+!*color1:                 #b22222
+!*color9:                 #b22222
+
+! Green
+!*color2:                 #228b22
+!*color10:                #228b22
+
+! Yellow
+!*color3:                 #b8860b
+!*color11:                #b8860b
+
+! Blue
+!*color4:                 #435e87
+!*color12:                #435e87
+
+! Magenta
+!*color5:                 #b8860b
+!*color13:                #b8860b
+
+! Cyan
+!*color6:                 #4169e1
+!*color14:                #4169e1
+
+! White
+!*color7:                 #ababab
+!*color15:                #ababab
+
+! Black theme
+
+*foreground:             #ffffff
+
+*color0:  #3b3b3b
+*color1:  #ff6b6b
+*color2:  #a3d46e
+*color3:  #eaca75
+*color4:  #435e87
+*color5:  #cf8243
+*color6:  #789ec6
+*color7:  #ffffff
+*color8:  #555753
+*color9:  #ff8d8d
+*color10: #c8e7a8
+*color11: #ffd155
+*color12: #587aa4
+*color13: #f6a24f
+*color14: #46a4ff
+*color15: #ffffff
+
+! Light theme
+!*background:             rgba:9a00/9a00/9a00/9fff
+!*foreground:             #000000
+
+! Black
+!*color0:                 #000000
+!*color8:                 #000000
+
+! Red
+!*color1:                 #a53518
+!*color9:                 #a53518
+
+! Green
+!*color2:                 #8BC964
+!*color10:                #37A600
+
+! Yellow
+!*color3:                 #956F00
+!*color11:                #956F00
+
+! Blue
+!*color4:                 #2129ff
+!*color12:                #2129ff
+
+! Magenta
+!*color5:                 #5500d2
+!*color13:                #5500d2
+
+! Cyan
+!*color6:                 #4169e1
+!*color14:                #4169e1
+
+! White
+!*color7:                 #404040
+!*color15:                #404040
+
+vim**visualID: default

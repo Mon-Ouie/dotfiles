@@ -28,6 +28,12 @@ backup_file zshrc.sh      ~/.zshrc
 backup_file emacs.el      ~/.emacs
 backup_file pryrc.rb      ~/.pryrc
 backup_file rtorrent.conf ~/.rtorrent.rc
+backup_file Xdefaults     ~/.Xdefaults
+backup_file gemrc         ~/.gemrc
 
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 backup_dir emacs.d                 ~/.emacs.d
+
+echo "Files you may still need to install:"
+echo "  — ~/.getmail/"
+echo "  — ~/code/dotfiles/github.gitconfig"
