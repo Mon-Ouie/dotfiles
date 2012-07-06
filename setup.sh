@@ -21,6 +21,7 @@ backup_dir() {
 }
 
 mkdir -p ~/.zsh/
+mkdir -p ~/.config/
 
 backup_file irbrc.rb      ~/.irbrc
 backup_file vimrc         ~/.vimrc
@@ -46,6 +47,7 @@ backup_file xinitrc       ~/.xinitrc
 
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 backup_dir emacs.d                 ~/.emacs.d
+backup_dir subtle                  ~/.config/subtle
 
 echo "Files you may still need to install:"
 echo "  — ~/.getmail/"
