@@ -34,4 +34,4 @@
         sm = submodule
         cl = clone
 [include]
-        path = github.gitconfig
+        path = code/dotfiles/github.gitconfig
