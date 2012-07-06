@@ -1,0 +1,4 @@
+PATH=/bin:/usr/bin
+MAILDIR=$HOME/mail
+SPAMBOX=spam
+LOGFILE=$MAILDIR/procmail.log

@@ -1,0 +1,8 @@
+"3.3 (created: 2011/11/13 17:32:12)
+
+set defsearch=gg
+set "editor=emacsclient -t"
+set hintchars=auie,ctsrn
+source! /home/kilian/code/dotfiles/vimperatorrc.local
+
+" vim: set ft=vimperator:

@@ -31,6 +31,18 @@ backup_file rtorrent.conf ~/.rtorrent.rc
 backup_file Xdefaults     ~/.Xdefaults
 backup_file gemrc         ~/.gemrc
 backup_file gitconfig     ~/.gitconfig
+backup_file gtk-bookmarks ~/.gtk-bookmarks
+backup_file gtkrc         ~/.gtkrc-2.0.mine
+backup_file inputrc       ~/.inputrc
+backup_file mpd.conf      ~/.mpd.conf
+backup_file muttrc        ~/.muttrc
+backup_file ncmpcpp.conf  ~/.ncmcpp/config
+backup_file procmailrc    ~/.procmailrc
+backup_file rvmrc         ~/.rvmrc
+backup_file vimperatorrc  ~/.vimperatorrc
+backup_file XCompose      ~/.XCompose
+backup_file Xmodmap       ~/.Xmodmap
+backup_file xinitrc       ~/.xinitrc
 
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 backup_dir emacs.d                 ~/.emacs.d
@@ -38,3 +50,12 @@ backup_dir emacs.d                 ~/.emacs.d
 echo "Files you may still need to install:"
 echo "  — ~/.getmail/"
 echo "  — ~/code/dotfiles/github.gitconfig"
+echo "  — ~/mpd/"
+echo "  — ~/code/ [includes some shell scripts]"
+echo "  — ~/doc/"
+echo "  — ~/picture/"
+echo "  — ~/.msmtprc"
+echo
+echo "You may also need to set up:"
+echo "  — SSH"
+echo "  — RVM"
