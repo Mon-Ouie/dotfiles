@@ -23,7 +23,7 @@ urxvt1*background:       rgba:0000/0000/0000/9fff
 
 URxvt.background:        rgba:0000/0000/0000/9fff
 
-URxvt.perl-lib:        /home/kilian/code/dotfiles/urxvt
+URxvt.perl-lib:        /home/kilian/code/dotfiles/urxvt ! absolute path needed
 URxvt.perl-ext-common: default,keyboard-select,url-select,clipboard
 
 URxvt.font:              xft:Mensch:pixelsize=13

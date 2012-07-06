@@ -3,6 +3,6 @@
 set defsearch=gg
 set "editor=emacsclient -t"
 set hintchars=auie,ctsrn
-source! /home/kilian/code/dotfiles/vimperatorrc.local
+source! ~/code/dotfiles/vimperatorrc.local
 
 " vim: set ft=vimperator:

@@ -32,7 +32,7 @@ backup_file rtorrent.conf ~/.rtorrent.rc
 backup_file Xdefaults     ~/.Xdefaults
 backup_file gemrc         ~/.gemrc
 backup_file gitconfig     ~/.gitconfig
-backup_file gtkrc         ~/.gtkrc-2.0.mine
+backup_file gtkrc         ~/.gtkrc-2.0
 backup_file inputrc       ~/.inputrc
 backup_file mpd.conf      ~/.mpd.conf
 backup_file muttrc        ~/.muttrc
