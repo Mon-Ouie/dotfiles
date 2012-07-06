@@ -36,7 +36,7 @@ backup_file gtkrc         ~/.gtkrc-2.0.mine
 backup_file inputrc       ~/.inputrc
 backup_file mpd.conf      ~/.mpd.conf
 backup_file muttrc        ~/.muttrc
-backup_file ncmpcpp.conf  ~/.ncmcpp/config
+backup_file ncmpcpp.conf  ~/.ncmpcpp/config
 backup_file procmailrc    ~/.procmailrc
 backup_file rvmrc         ~/.rvmrc
 backup_file vimperatorrc  ~/.vimperatorrc
