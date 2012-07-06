@@ -46,9 +46,9 @@ backup_file Xmodmap       ~/.Xmodmap
 backup_file xinitrc       ~/.xinitrc
 
 backup_file applications/defaults.list \
-    ~/.locale/share/applications/defaults.list
+    ~/.local/share/applications/defaults.list
 for i in applications/*.desktop; do
-    backup_file $1 ~/.locale/share/$1
+    backup_file $i ~/.local/share/$i
 done
 
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
@@ -63,6 +63,7 @@ echo "  — ~/code/ [includes some shell scripts]"
 echo "  — ~/doc/"
 echo "  — ~/picture/"
 echo "  — ~/.msmtprc"
+echo "  — ~/.weechat"
 echo
 echo "You may also need to set up:"
 echo "  — SSH"
