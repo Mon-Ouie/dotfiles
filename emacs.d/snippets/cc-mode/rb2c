@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: rb2c
+# --
+${1:type} *${2:prefix}_rb2${3:name}(VALUE obj) {
+  if (!rb_obj_is_kind_of(obj, rb_path2class("${4:Type}"))) {
+    rb_raise(rb_eTypeError, "can't convert %s into $4",
+             ${5:RAY_OBJ_CLASSNAME}(obj));
+  }
+
+  $1 *ptr = NULL;
+  Data_Get_Struct(obj, $1, ptr);
+
+  return ptr;
+}

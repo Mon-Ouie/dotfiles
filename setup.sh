@@ -22,10 +22,12 @@ backup_dir() {
 
 mkdir -p ~/.zsh/
 
-backup_file irbrc.rb ~/.irbrc
-backup_file vimrc    ~/.vimrc
-backup_file zshrc.sh ~/.zshrc
-backup_file emacs.el ~/.emacs
+backup_file irbrc.rb      ~/.irbrc
+backup_file vimrc         ~/.vimrc
+backup_file zshrc.sh      ~/.zshrc
+backup_file emacs.el      ~/.emacs
+backup_file pryrc.rb      ~/.pryrc
+backup_file rtorrent.conf ~/.rtorrent.rc
 
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
-backup_dir emacs.d ~/.emacs.d
+backup_dir emacs.d                 ~/.emacs.d

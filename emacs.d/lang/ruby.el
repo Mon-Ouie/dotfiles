@@ -1,9 +1,14 @@
 (require 'ruby-block)
 (setq ruby-block-highlight-toggle t)
 
+(require 'column-marker)
+
 (add-hook 'ruby-mode-hook '(lambda ()
                              (setq tab-width 2)
-                             (ruby-block-mode t)))
+                             (auto-fill-mode t)
+                             (flymake-mode t)
+                             (ruby-block-mode t)
+                             (column-marker-2 80)))
 
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
@@ -19,6 +24,35 @@
 (define-key ruby-mode-map (kbd "s-r") 'ruby-run-buffer)
 (define-key ruby-mode-map (kbd "s-d") 'yari)
 
+(require 'align)
+
+(add-to-list 'align-rules-list
+             '(ruby-case-then
+               (regexp  . "\\(\\s-+\\)then")
+               (modes   . '(ruby-mode))))
+
+(add-to-list 'align-rules-list
+             '(ruby-comma-delimiter
+               (regexp . ",\\(\\s-*\\)[^/ \t\n]")
+               (modes  . '(ruby-mode))
+               (repeat . t)))
+
+(add-to-list 'align-rules-list
+             '(ruby-string-after-func
+               (regexp . "^\\s-*[a-zA-Z0-9.:?_]+\\(\\s-+\\)['\"]\\w+['\"]")
+               (modes  . '(ruby-mode))
+               (repeat . t)))
+
+(add-to-list 'align-rules-list
+             '(ruby-symbol-after-func
+               (regexp . "^\\s-*[a-zA-Z0-9.:?_]+\\(\\s-+\\):\\w+")
+               (modes  . '(ruby-mode))))
+
+(add-to-list 'align-perl-modes         'ruby-mode)
+(add-to-list 'align-dq-string-modes    'ruby-mode)
+(add-to-list 'align-sq-string-modes    'ruby-mode)
+(add-to-list 'align-open-comment-modes 'ruby-mode)
+
 ;; Shamelessly stolen code from dominikh to colorize documentation.
 
 (defface font-lock-yard-param-name-face
@@ -26,8 +60,6 @@
   "Font Lock mode face used to highlight YARD param names."
   :group 'font-lock-faces)
 
-;; @option opts [String] :subject The subject
-;; @option opts [String] :body ('') The email's body
 (defvar font-lock-yard-param-name-face 'font-lock-yard-param-name-face
   "Face name to use for YARD param names.")
 
@@ -36,8 +68,6 @@
   "Font Lock mode face used to highlight YARD option default values."
   :group 'font-lock-faces)
 
-;; @option opts [String] :subject The subject
-;; @option opts [String] :body ('') The email's body
 (defvar font-lock-yard-option-default-value-face 'font-lock-yard-option-default-value-face
   "Face name to use for YARD option default values.")
 
@@ -46,8 +76,6 @@
   "Font Lock mode face used to highlight YARD lines."
   :group 'font-lock-faces)
 
-;; @option opts [String] :subject The subject
-;; @option opts [String] :body ('') The email's body
 (defvar font-lock-yard-face 'font-lock-yard-face
   "Face name to use for YARD lines")
 
@@ -87,13 +115,12 @@
          (local-file  (file-relative-name
                        temp-file
                        (file-name-directory buffer-file-name))))
-    (list "ruby" (list "-c" local-file))))
+    (list "ruby" (list "-w" "-c" local-file))))
 
 (push '(".+\\.rb$" flymake-ruby-init) flymake-allowed-file-name-masks)
 (push '("Rakefile$" flymake-ruby-init) flymake-allowed-file-name-masks)
 
 (push '("^\\(.*\\):\\([0-9]+\\): \\(.*\\)$" 1 2 nil 3) flymake-err-line-patterns)
 
-;; inf-ruby
-(setq-default inf-ruby-prompt-pattern ">> *")
-(setq-default inf-ruby-first-prompt-pattern ">> *")
+;; ERB templates
+(require 'rhtml-mode)

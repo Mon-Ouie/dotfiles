@@ -8,10 +8,22 @@
 (global-set-key (kbd "M-<right>") 'windmove-right)
 (global-set-key (kbd "M-<left>")  'windmove-left)
 
+(global-set-key (kbd "M-»") 'windmove-right)
+(global-set-key (kbd "M-«") 'windmove-left)
+
+(global-set-key (kbd "M-[") 'backward-paragraph)
+(global-set-key (kbd "M-]") 'forward-paragraph)
+
 (global-set-key (kbd "C-c i") 'magit-status)
 
-(global-set-key (kbd "C-c p") 'gist-region-or-buffer)
-(global-set-key (kbd "s-p") 'gist-region-or-buffer)
+(global-set-key (kbd "<backtab> <tab>") 'yas/expand-temp-snippet)
+(global-set-key (kbd "<backtab> s") 'yas/save-temp-snippet)
+
+;; (require 'gist)
+;; (global-set-key (kbd "C-c p") 'gist-region-or-buffer)
+;; (global-set-key (kbd "s-p") 'gist-region-or-buffer)
+
+(global-set-key (kbd "<M-return>") 'align)
 
 (defun rake-command (task)
   (concat (executable-find "ruby") " -S rake " task))
@@ -28,6 +40,29 @@
   (interactive)
   (compile (rake-command "ext:rebuild")))
 
+(defun dictionary-list (word)
+  (interactive "sSearch word: ")
+  (compile (concat (executable-find "ruby")
+                   " "
+                   (getenv "HOME") "/code/rb/dict.rb"
+                   " "
+                   "list"
+                   " "
+                   "\"" word "\"")))
+
+(defun dictionary-def (word)
+  (interactive "sDefine word: ")
+  (compile (concat (executable-find "ruby")
+                   " "
+                   (getenv "HOME") "/code/rb/dict.rb"
+                   " "
+                   "def"
+                   " "
+                   "\"" word "\"")))
+
+(global-set-key (kbd "C-c s") 'dictionary-list)
+(global-set-key (kbd "C-c d") 'dictionary-def)
+
 (global-set-key (kbd "C-c t") 'rake-run-test-task)
 (global-set-key (kbd "s-t") 'rake-run-test-task)
 
@@ -37,13 +72,17 @@
 (global-set-key (kbd "C-c E") 'rake-run-ext-rebuild-task)
 (global-set-key (kbd "s-E") 'rake-run-ext-rebuild-task)
 
-(defun run-inf-ruby-in-current-dir()
+(defun pry()
   (interactive)
-  (cd (file-name-directory (buffer-file-name (current-buffer))))
-  (inf-ruby))
+  (comint-run (executable-find "pry")))
 
-(global-set-key (kbd "s-i") 'inf-ruby)
-(global-set-key (kbd "C-c I") 'inf-ruby)
+(global-set-key (kbd "s-i") 'pry)
+(global-set-key (kbd "C-c I") 'pry)
+
+(global-set-key [f6] 'poem)
+(global-set-key [f7] 'doc)
+
+(global-set-key (kbd "C-x B") 'buffer-menu)
 
 ;; Useful on a keyboard that has two option keys.
 (defun map-meta-to-custom()

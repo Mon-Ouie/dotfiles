@@ -7,3 +7,7 @@ backup/
 /emacs.d/flymake.tmp/
 .svn
 /emacs.d/url/cookies
+/emacs.d/.org-id-locations
+/emacs.d/bookmarks
+/emacs.d/logs/
+/emacs.d/tramp

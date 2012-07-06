@@ -15,8 +15,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-(require 'textmate)
-(textmate-mode t)
+(ido-mode t)
 
 (require 'autopair)
 (autopair-global-mode t)
@@ -36,6 +35,12 @@
   (setq mac-option-modifier nil))
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(require 'flymake)
+(require 'flymake-extension)
+(require 'flymake-point)
+(require 'flymake-fringe-icons)
+(require 'pos-tip)
 
 (defun flymake-create-temp-intemp (file-name prefix)
   "Return file name in temporary directory for checking FILE-NAME.
@@ -72,4 +77,4 @@ makes)."
 (ispell-change-dictionary "fr")
 
 ;; Annoying echo in inf-ruby
-(setq-default comint-process-echoes t)
+(setq-default comint-process-echoes nil)

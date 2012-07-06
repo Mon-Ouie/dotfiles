@@ -1,20 +1,19 @@
 (require 'el-get)
 
 (require 'package)
-(setq package-archives (cons '("tromey" . "http://tromey.com/elpa/") package-archives))
+(setq package-archives (cons '("tromey" . "http://tromey.com/elpa/")
+                             package-archives))
+
+(setq package-archives (cons '("marmelade" . "http://marmalade-repo.org/packages/")
+                             package-archives))
 
 (setq el-get-sources
-      '((:name package)
-        (:name el-get)
-
-	(:name ruby-mode)
-        (:name inf-ruby :type elpa)
-        (:name ruby-block)
+      '((:name ruby-block)
         (:name ruby-end)
-        (:name rvm)
-        (:name inf-ruby-bond :type git
-               :url "git://github.com/pd/inf-ruby-bond"
-               :load "inf-ruby-bond.el")
+        ;(:name rvm)
+        ;; (:name inf-ruby-bond :type git
+        ;;        :url "git://github.com/pd/inf-ruby-bond"
+        ;;        :load "inf-ruby-bond.el")
 
         (:name yaml-mode)
         (:name tuareg-mode)
@@ -26,15 +25,25 @@
         (:name markdown-mode)
         (:name rhtml-mode)
         (:name pkgbuild-mode)
+        (:name zencoding-mode)
+        (:name slime)
 
-        (:name gist :type git
-               :url "git://github.com/defunkt/gist.el"
-               :load "gist.el")
+	;; (:name pcache :type elpa)
+
+        ;; (:name gh :type git
+        ;;        :url "git://github.com/sigma/gh.el.git"
+        ;;        :load "gh.el")
+
+        ;; (:name gist :type git
+        ;;        :url "git://github.com/defunkt/gist.el"
+        ;;        :load "gist.el")
+
         (:name yari)
         (:name auctex)
         (:name magit)
         (:name dictionary :type elpa)
 
+        (:name popup :type elpa)
         (:name fringe-helper
                :type http
                :url "http://nschum.de/src/emacs/fringe-helper/fringe-helper.el"
@@ -42,19 +51,36 @@
                :compile "fring-helper.el")
         (:name flymake-extension :type emacswiki)
         (:name flymake-point)
-        (:name flymake-fringe-icons)
+        (:name flymake-fringe-icons
+               :description "Add icons in the fringe, for flymake"
+               :depends fringe-helper
+               :type http
+               :url "https://gist.github.com/raw/759130/a85ebbc6bfc5fbab54677f4236e902b2da7bf41f/flymake-fringe-icons.el"
+               :features flymake-fringe-icons)
 
         (:name pos-tip)
 
-        (:name color-theme)
-        (:name color-theme-twilight)
+        (:name column-marker :type http
+               :url "http://www.emacswiki.org/emacs/download/column-marker.el"
+               :load "column-marker.el")
 
-        (:name textmate :type git
-               :url "git://github.com/defunkt/textmate.el"
-               :load "textmate.el")
+        (:name color-theme)
+        ;(:name color-theme-twilight)
+
         (:name autopair)
-        (:name yasnippet)
-        (:name auto-complete)
-        (:name auto-complete-clang)))
+        (:name yasnippet :type elpa)
+
+        (:name auto-complete :type elpa)
+        (:name auto-complete-clang)
+
+        (:name dired+)
+        (:name deft :type git
+               :url "git://jblevins.org/git/deft.git"
+               :load "deft.el")
+
+        (:name c-eldoc
+               :type elpa
+               :load "c-eldoc.el")
+        (:name android-mode)))
 
 (el-get 'sync)

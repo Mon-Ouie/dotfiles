@@ -1,0 +1,10 @@
+\begin{tabular}{${1:|l|l|l|}}
+   ${2:\hline
+   a & b & c \\
+   \hline
+
+   d & e & f \\
+   g & h & i \\
+
+   \hline}
+\end{tabular}

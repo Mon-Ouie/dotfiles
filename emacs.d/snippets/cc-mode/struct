@@ -1,6 +1,5 @@
 #name : struct ... { ... }
 # --
-struct ${1:name}
-{
-    $0
-};
+typedef struct {
+  $0
+} ${1:name};

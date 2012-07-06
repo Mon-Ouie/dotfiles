@@ -1,3 +1,5 @@
+(require 'auto-complete)
+(require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (config-dir "ac-dict"))
 
 ;; Completion in any buffer, aside from the minibuffer
@@ -18,6 +20,13 @@
 
 (setq ac-ignore-case t)
 
+(require 'yasnippet)
 (setq yas/root-directory (config-file "snippets"))
 (yas/reload-all)
 (yas/global-mode t)
+
+(require 'yas-temp-snippet)
+
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)

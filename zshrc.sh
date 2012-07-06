@@ -30,8 +30,12 @@ else
     export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 fi
 
+export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin" # using system ruby if it's 1.9
+export PATH="$PATH:/usr/bin/vendor_perl"
+
 export CFLAGS="-I/usr/local/include"
 export LDFLAGS="-L/usr/local/lib"
+export MAKEFLAGS="-j 5"
 
 export RUBYOPT="-rubygems"
 
@@ -48,7 +52,7 @@ zstyle ':completion:*' glob 1
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' max-errors 2
+#zstyle ':completion:*' max-errors 2
 zstyle ':completion:*' prompt 'correction: %e '
 zstyle ':completion:*' squeeze-slashes true
 zstyle ':completion:*' substitute 1
@@ -107,6 +111,8 @@ alias ..='cd ..'
 alias weechat='weechat-curses'
 alias rmpc='mpc --host=192.168.1.9'
 
+alias tree="tree -C"
+
 if [[ $HOST == "arch-desktop" ]]; then
     alias ls="ls --color"
 fi
@@ -123,4 +129,32 @@ fi
 
 cr() { coderay $1 -term | less -r }
 
+play-stream() {
+    mplayer -playlist $1 -dumpstream -dumpfile /dev/fd/3 3>&1 1>&2 | tee $2 | mplayer -
+}
+
+to-android() {
+    mencoder $1 -o $2 \
+        -ovc lavc -oac lavc \
+        -lavcopts vcodec=mpeg4:acodec=libfaac:vbitrate=800:abitrate=192:vglobal=1:aglobal=1 \
+        -of lavf -lavfopts format=3gp \
+        -noskip -noautoexpand -vf dsize=480:352:2,scale=-8:-8,harddup \
+        -af channels=2,volnorm
+}
+
+md-indent() {
+    xclip -o | ruby -pe '$_.prepend "    "' | xclip
+}
+
+md-unindent() {
+    xclip -o | ruby -pe '$_[0, 4] = ""' | xclip
+}
+
+mount-iso() { # I always forget the syntax of that command
+    sudo mount -o loop -t iso9660 "$1" /mnt/iso
+}
+
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
+
+[[ -n "$TMUX" ]] && export TERM="screen-256color"

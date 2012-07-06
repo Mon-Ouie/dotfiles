@@ -1,0 +1,48 @@
+# -*- mode: snippet -*-
+# name: memdoc
+# key: memdoc
+# --
+\documentclass[a4paper,11pt]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[margin=3.0cm]{geometry}
+\usepackage{tikz}
+\usepackage[european]{circuitikz}
+\usepackage[squaren,Gray]{SIunits}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage[autolanguage]{numprint}
+
+\makechapterstyle{box}{
+  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\chapnumfont}{\normalfont\sffamily\Huge\bfseries}
+  \renewcommand*{\printchapternum}{
+    \flushright
+    \begin{tikzpicture}
+      \draw[fill,color=black] (0,0) rectangle (2cm,2cm); %(1,1) circle (1cm);
+      \draw[color=white] (1cm,1cm) node { \chapnumfont\thechapter };
+    \end{tikzpicture}
+  }
+  \renewcommand*{\chaptitlefont}{\normalfont\sffamily\Huge\bfseries}
+  \renewcommand*{\printchaptertitle}[1]{\flushright\chaptitlefont##1}
+}
+
+\chapterstyle{box}
+
+\renewcommand*{\abstractnamefont}{\flushright\normalfont\sffamily\Huge\bfseries}
+\renewcommand*{\abstracttextfont}{\vspace{1cm}}
+
+\begin{document}
+
+\nouppercaseheads
+
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+
+\tableofcontents
+
+\end{document}

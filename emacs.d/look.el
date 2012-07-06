@@ -18,12 +18,19 @@
 (setq inhibit-startup-message t
       initial-scratch-message nil)
 
-(color-theme-twilight)
+(require 'color-theme)
+(load-file (config-file "my-charcoal.el"))
 
+;; (my-color-theme-charcoal-black)
+(color-theme-clarity)
+
+(require 'magit)
 (set-face-foreground 'magit-diff-add "green")
 (set-face-attribute 'highlight
                     nil
                     :background "#333333" :underline t)
+
+(require 'linum)
 (set-face-foreground 'linum "#FFFFFF")
 
 ;; Colors in compile-mode
