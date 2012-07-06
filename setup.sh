@@ -45,6 +45,12 @@ backup_file XCompose      ~/.XCompose
 backup_file Xmodmap       ~/.Xmodmap
 backup_file xinitrc       ~/.xinitrc
 
+backup_file applications/defaults.list \
+    ~/.locale/share/applications/defaults.list
+for i in applications/*.desktop; do
+    backup_file $1 ~/.locale/share/$1
+done
+
 backup_dir zsh-syntax-highlighting ~/.zsh/zsh-syntax-highlighting
 backup_dir emacs.d                 ~/.emacs.d
 backup_dir subtle                  ~/.config/subtle

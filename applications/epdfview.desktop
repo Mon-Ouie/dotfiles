@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=epdfview
+MimeType=application/pdf;
+Exec=epdfview %f
