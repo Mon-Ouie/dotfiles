@@ -28,6 +28,8 @@
         (shell-script "bash")
         (caml "ocaml")))
 
+(setq org-export-html-postamble nil)
+
 (setq org-format-latex-options
       '(:foreground default
         :background default
