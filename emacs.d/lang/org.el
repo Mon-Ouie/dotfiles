@@ -6,7 +6,7 @@
 
 (setq org-export-latex-packages-alist ; (options package-name required-for-previews)
       '(("" "minted" nil) ;; syntax highlighting
-        ("" "mhchem" t)  ;; typesetting chemistry
+        ("" "mhchem" t)   ;; typesetting chemistry
         ))
 
 (setq org-file-apps
