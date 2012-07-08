@@ -20,6 +20,14 @@
  '((emacs-lisp . t)
    (gnuplot . t)))
 
+(setq org-export-latex-minted-langs
+      '((emacs-lisp "common-lisp")
+        (lisp "common-lisp")
+        (cc "c++")
+        (cperl "perl")
+        (shell-script "bash")
+        (caml "ocaml")))
+
 (setq org-format-latex-options
       '(:foreground default
         :background default
