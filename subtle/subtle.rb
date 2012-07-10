@@ -11,8 +11,6 @@ module H
   end
 end
 
-@font = "xft:GohuFont:pixelsize=13"
-
 #
 # == Options
 #
@@ -155,7 +153,6 @@ theme :dark do
     border      "#202020", 0
     padding     0, 3
     font        "-*-*-*-*-*-*-14-*-*-*-*-*-*-*"
-    #font        @font
   end
 
   # Style for the all views
