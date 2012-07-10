@@ -113,9 +113,9 @@ alias rmpc='mpc --host=192.168.1.9'
 
 alias tree="tree -C"
 
-if [[ $HOST == "arch-desktop" ]]; then
-    alias ls="ls --color"
-fi
+case `hostname` in
+    arch-*) alias ls='ls --color';;
+esac
 
 compctl -/ cd
 
