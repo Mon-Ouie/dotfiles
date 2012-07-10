@@ -43,6 +43,7 @@ backup_file vimperatorrc  ~/.vimperatorrc
 backup_file XCompose      ~/.XCompose
 backup_file Xmodmap       ~/.Xmodmap
 backup_file xinitrc       ~/.xinitrc
+backup_file tmux.conf     ~/.tmux.conf
 
 backup_file applications/defaults.list \
     ~/.local/share/applications/defaults.list
