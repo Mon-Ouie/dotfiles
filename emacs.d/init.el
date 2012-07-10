@@ -13,11 +13,13 @@
   (setq custom-file (config-file "custom-linux.el")))
 
 (defun add-vendor-directory (dir)
-  (dolist (elem (directory-files dir))
-    (unless (string-match-p "^\\.\\.?$" elem) ;; Ignore . and ..
-      (let ((filename (concat dir elem)))
-        (if (file-directory-p filename)
-            (push filename load-path))))))
+  (when (and (file-exists-p dir)
+	     (file-directory-p dir))
+    (dolist (elem (directory-files dir))
+      (unless (string-match-p "^\\.\\.?$" elem) ;; Ignore . and ..
+	(let ((filename (concat dir elem)))
+	  (if (file-directory-p filename)
+	      (push filename load-path)))))))
 
 (add-vendor-directory (config-dir "vendor"))
 (add-vendor-directory (config-dir "el-get"))
