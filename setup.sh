@@ -23,6 +23,7 @@ backup_dir() {
 mkdir -p ~/.zsh/
 mkdir -p ~/.config/
 mkdir -p ~/.ncmcpp/
+mkdir -p ~/.local/share/applications/
 
 backup_file irbrc.rb      ~/.irbrc
 backup_file vimrc         ~/.vimrc
