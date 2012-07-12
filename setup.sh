@@ -22,6 +22,8 @@ backup_dir() {
 
 mkdir -p ~/.zsh/
 mkdir -p ~/.config/
+mkdir -p ~/.ncmcpp/
+mkdir -p ~/.local/share/applications/
 
 backup_file irbrc.rb      ~/.irbrc
 backup_file vimrc         ~/.vimrc
@@ -43,6 +45,7 @@ backup_file vimperatorrc  ~/.vimperatorrc
 backup_file XCompose      ~/.XCompose
 backup_file Xmodmap       ~/.Xmodmap
 backup_file xinitrc       ~/.xinitrc
+backup_file tmux.conf     ~/.tmux.conf
 
 backup_file applications/defaults.list \
     ~/.local/share/applications/defaults.list

@@ -113,9 +113,9 @@ alias rmpc='mpc --host=192.168.1.9'
 
 alias tree="tree -C"
 
-if [[ $HOST == "arch-desktop" ]]; then
-    alias ls="ls --color"
-fi
+case `hostname` in
+    arch-*) alias ls='ls --color';;
+esac
 
 compctl -/ cd
 
@@ -152,6 +152,22 @@ md-unindent() {
 
 mount-iso() { # I always forget the syntax of that command
     sudo mount -o loop -t iso9660 "$1" /mnt/iso
+}
+
+sync-dir () {
+    from="$1/"
+    to="$2/"
+
+    rsync -avurP "$from" "$to" || exit 1
+    rsync -avurP "$to"   "$from" || exit 1
+}
+
+sync-file () {
+    from="$1"
+    to="$2"
+
+    rsync -avuP "$from" "$to" || exit 1
+    rsync -avuP "$to"   "$from" || exit 1
 }
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
