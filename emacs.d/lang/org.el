@@ -41,3 +41,4 @@
         ("begin" "$1" "$" "$$" "\\(" "\\[")))
 
 (setq org-refile-use-outline-path t)
+(setq org-refile-targets '((nil . (:maxlevel . 3))))
