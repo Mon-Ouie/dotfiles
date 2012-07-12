@@ -47,3 +47,6 @@ gimp
 cups-filters
 ghostscripts
 gsfonts
+gdb
+getmail
+msmtp
