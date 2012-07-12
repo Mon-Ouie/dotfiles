@@ -39,3 +39,5 @@
         :html-scale 1.0
         :matchers
         ("begin" "$1" "$" "$$" "\\(" "\\[")))
+
+(setq org-refile-use-outline-path t)
