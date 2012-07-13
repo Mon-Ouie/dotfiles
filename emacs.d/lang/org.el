@@ -1,4 +1,5 @@
 (require 'org)
+(require 'org-habit)
 
 (add-hook 'org-mode-hook '(lambda () (auto-fill-mode t)))
 
