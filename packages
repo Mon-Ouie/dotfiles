@@ -5,6 +5,7 @@ git
 openssh
 xorg-xauth
 ruby
+ruby-doc
 jshon
 packer
 sudo
@@ -47,3 +48,10 @@ gimp
 cups-filters
 ghostscripts
 gsfonts
+gdb
+getmail
+msmtp
+python2-pygments
+texlive-most
+texlive-lang
+gnuplot

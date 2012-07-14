@@ -1,4 +1,5 @@
 (require 'org)
+(require 'org-habit)
 
 (add-hook 'org-mode-hook '(lambda () (auto-fill-mode t)))
 
@@ -39,3 +40,6 @@
         :html-scale 1.0
         :matchers
         ("begin" "$1" "$" "$$" "\\(" "\\[")))
+
+(setq org-refile-use-outline-path t)
+(setq org-refile-targets '((nil . (:maxlevel . 3))))
