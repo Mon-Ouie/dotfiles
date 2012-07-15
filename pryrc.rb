@@ -380,7 +380,7 @@ Commands = Pry::CommandSet.new Pry::Commands do
       next
     end
 
-    opts = opts.to_hash(true)
+    opts = opts.to_hash
 
     regexp = Regexp.new(opts[:filter], 'i')
 
