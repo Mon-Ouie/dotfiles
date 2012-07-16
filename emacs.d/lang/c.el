@@ -4,7 +4,29 @@
   '("-I/usr/include"
     "-I/usr/include/ruby-1.9.1"
     "-I/usr/include/ruby-1.9.1/x86_64-linux"
-    "-I/usr/include/freetype2"))
+    "-I/usr/include/freetype2"
+    "-I/usr/include/Qt"
+    "-I/usr/include/Qt3Support"
+    "-I/usr/include/QtCore"
+    "-I/usr/include/QtCrypto"
+    "-I/usr/include/QtDBus"
+    "-I/usr/include/QtDeclarative"
+    "-I/usr/include/QtDesigner"
+    "-I/usr/include/QtGui"
+    "-I/usr/include/QtHelp"
+    "-I/usr/include/QtMultimedia"
+    "-I/usr/include/QtNetwork"
+    "-I/usr/include/QtOpenGL"
+    "-I/usr/include/QtScript"
+    "-I/usr/include/QtScriptTools"
+    "-I/usr/include/QtSql"
+    "-I/usr/include/QtSvg"
+    "-I/usr/include/QtTest"
+    "-I/usr/include/QtUiTools"
+    "-I/usr/include/QtWebKit"
+    "-I/usr/include/QtXml"
+    "-I/usr/include/QtXmlPatterns"
+    ))
 
 (defun c-include-dirs-string ()
   (mapconcat #'identity c-include-dirs " "))
