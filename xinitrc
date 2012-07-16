@@ -14,7 +14,7 @@ tmux new-session -d -s other
 tmux new-window -t other:2 -n "mail" "TERM=screen-256color mutt"
 tmux new-window -t other:3 -n "music" "TERM=screen-256color ncmpcpp"
 
-urxvt -name irc_term -e zsh -c "sh ~/code/sh/weechat.sh" &
+urxvt -name irc_term -e zsh -c "sh ~/code/dotfiles/weechat.sh" &
 urxvt -name urxvt_other -e zsh -c "tmux attach -t other" &
 
 firefox &

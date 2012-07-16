@@ -466,6 +466,25 @@ tag "stick" do
   float true
 end
 
+tag "gimp_image" do
+  match   :role => "gimp-image-window"
+  gravity :gimp_image
+end
+
+tag "gimp_toolbox" do
+  match   :role => "gimp-toolbox$"
+  gravity :gimp_toolbox
+end
+
+tag "gimp_dock" do
+  match   :role => "gimp-dock"
+  gravity :gimp_dock
+end
+
+tag "gimp_scum" do
+  match role: "gimp-.*|screenshot"
+end
+
 view "term" do
   match "term_other|term_irc|editor_irc"
   icon H.icon("terminal.xbm")
@@ -479,7 +498,7 @@ view "emacs" do
 end
 
 view "rand" do
-  match "default"
+  match "default|gimp_.*"
   icon H.icon("fan.xbm")
   icon_only true
 end

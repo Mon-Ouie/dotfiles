@@ -31,10 +31,10 @@ module Levenshtein
     l2 = s2.length
 
     # Check length
-    return l2 * cost_ins if(0 == l1)
-    return l1 * cost_del if(0 == l2)
+    return l2 * cost_ins if 0 == l1
+    return l1 * cost_del if 0 == l2
 
-    raise "Max length" if(l1 > MAX_LENGTH || l2 > MAX_LENGTH)
+    raise "Max length" if l1 > MAX_LENGTH || l2 > MAX_LENGTH
 
     # Step 2: Create and init arrays
     p1 = a1 || Array.new(l2 + 1, 0)
@@ -51,10 +51,10 @@ module Levenshtein
         # Step 5: Get cost
         c0 = p1[j] + ((s1[i] == s2[j]) ? 0 : cost_rep)
         c1 = p1[j + 1] + cost_del
-        c0 = c1 if(c1 < c0)
+        c0 = c1 if c1 < c0
 
         c2 = p2[j] + cost_ins
-        c0 = c2 if(c2 < c0)
+        c0 = c2 if c2 < c0
 
         # Step 6: Store min value in matrix
         p2[j + 1] = c0

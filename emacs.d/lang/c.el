@@ -1,5 +1,36 @@
 (require 'cc-mode)
 
+(defvar c-include-dirs
+  '("-I/usr/include"
+    "-I/usr/include/ruby-1.9.1"
+    "-I/usr/include/ruby-1.9.1/x86_64-linux"
+    "-I/usr/include/freetype2"
+    "-I/usr/include/Qt"
+    "-I/usr/include/Qt3Support"
+    "-I/usr/include/QtCore"
+    "-I/usr/include/QtCrypto"
+    "-I/usr/include/QtDBus"
+    "-I/usr/include/QtDeclarative"
+    "-I/usr/include/QtDesigner"
+    "-I/usr/include/QtGui"
+    "-I/usr/include/QtHelp"
+    "-I/usr/include/QtMultimedia"
+    "-I/usr/include/QtNetwork"
+    "-I/usr/include/QtOpenGL"
+    "-I/usr/include/QtScript"
+    "-I/usr/include/QtScriptTools"
+    "-I/usr/include/QtSql"
+    "-I/usr/include/QtSvg"
+    "-I/usr/include/QtTest"
+    "-I/usr/include/QtUiTools"
+    "-I/usr/include/QtWebKit"
+    "-I/usr/include/QtXml"
+    "-I/usr/include/QtXmlPatterns"
+    ))
+
+(defun c-include-dirs-string ()
+  (mapconcat #'identity c-include-dirs " "))
+
 (add-hook 'c-mode-common-hook 'turn-on-auto-fill)
 
 (add-hook 'c-mode-common-hook
@@ -10,7 +41,6 @@
 (add-hook 'c-mode-common-hook '(lambda ()
                                  (flymake-mode t)
                                  (column-marker-2 80)))
-
 
 (setq-default c-default-style "k&r")
 (setq-default c-basic-offset 2)
@@ -25,7 +55,7 @@
           '(lambda()
              (setq ac-sources (append '(ac-source-clang) ac-sources))))
 
-(setq ac-clang-flags '("-I." "-I.." "-I/usr/include"))
+(setq ac-clang-flags `("-I." "-I.." ,@c-include-dirs))
 
 (defun objc-wrap-brackets (&optional count)
   (interactive "*p")
@@ -39,7 +69,8 @@
 (define-key objc-mode-map (kbd "C-c b") 'xcode/build-compile)
 
 (require 'c-eldoc)
-(setq c-eldoc-includes "`pkg-config gtk+-2.0 --cflags` -I./ -I../")
+(setq c-eldoc-includes
+      (concat "`pkg-config gtk+-2.0 --cflags` -I. -I.. " (c-include-dirs-string)))
 (add-hook 'c-mode-common-hook 'c-turn-on-eldoc-mode)
 
 ;; Flymake
@@ -57,31 +88,30 @@
          (local-directory
           (file-name-directory buffer-file-name)))
     (list compiler
-          (append (list "-fsyntax-only" ;; Don't compile my code
+          (append `("-fsyntax-only" ;; Don't compile my code
 
-                        ;; Make clang output look like GCC (except for the message :)
-                        "-fno-color-diagnostics"
-                        "-fno-caret-diagnostics"
-                        "-fno-show-column"
+                    ;; Make clang output look like GCC (except for the message :)
+                    "-fno-color-diagnostics"
+                    "-fno-caret-diagnostics"
+                    "-fno-show-column"
 
-                        ;; Be mean
-                        "-Wall"
-                        "-Wextra"
-                        "-pedantic"
-                        "-Werror-implicit-function-declaration"
+                    ;; Be mean
+                    "-Wall"
+                    "-Wextra"
+                    "-pedantic"
+                    "-Werror-implicit-function-declaration"
 
-                        ;; But let me do this, still.
-                        "-Wno-unused-parameter"
+                    ;; But let me do this, still.
+                    "-Wno-unused-parameter"
 
-                        ;; Load path
-                        (concat "-I" local-directory)
-                        (concat "-I" local-directory "/..")
-                        "-I/usr/include/freetype2"
-                        "-I/usr/include/ruby-1.9.1"
-                        "-I/usr/include/ruby-1.9.1/x86_64-linux"
+                    ;; Load path
+                    ,(concat "-I" local-directory)
+                    ,(concat "-I" local-directory "/..")
 
-                        ;; Input file
-                        local-file)
+                    ,@c-include-dirs
+
+                    ;; Input file
+                    ,local-file)
                   flymake-clang-extra-c-flags))))
 
 (defvar flymake-clang-extra-c-flags ()
