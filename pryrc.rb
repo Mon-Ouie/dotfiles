@@ -39,6 +39,9 @@ Pry.config.correct_indent = false
 
 Pry.config.color = true
 
+Pry.config.theme = "twilight"
+# Other nice themes: pry-cold, zenburn, railscasts
+
 begin
   require 'coolline'
 
