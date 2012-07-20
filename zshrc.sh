@@ -158,16 +158,16 @@ sync-dir () {
     from="$1/"
     to="$2/"
 
-    rsync -avurP "$from" "$to" || exit 1
-    rsync -avurP "$to"   "$from" || exit 1
+    rsync -avurP "$from" "$to" || return 1
+    rsync -avurP "$to"   "$from" || return 1
 }
 
 sync-file () {
     from="$1"
     to="$2"
 
-    rsync -avuP "$from" "$to" || exit 1
-    rsync -avuP "$to"   "$from" || exit 1
+    rsync -avuP "$from" "$to" || return 1
+    rsync -avuP "$to"   "$from" || return 1
 }
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
