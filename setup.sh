@@ -36,7 +36,6 @@ backup_file gemrc         ~/.gemrc
 backup_file gitconfig     ~/.gitconfig
 backup_file gtkrc         ~/.gtkrc-2.0
 backup_file inputrc       ~/.inputrc
-backup_file mpd.conf      ~/.mpd.conf
 backup_file muttrc        ~/.muttrc
 backup_file ncmpcpp.conf  ~/.ncmpcpp/config
 backup_file procmailrc    ~/.procmailrc
