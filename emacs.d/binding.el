@@ -74,7 +74,7 @@
 (global-set-key (kbd "C-c E") 'rake-run-ext-rebuild-task)
 (global-set-key (kbd "s-E") 'rake-run-ext-rebuild-task)
 
-(defun pry()
+(defun pry ()
   (interactive)
   (comint-run (executable-find "pry")))
 
