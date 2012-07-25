@@ -12,3 +12,4 @@ backup/
 /emacs.d/logs/
 /emacs.d/tramp
 /github.gitconfig
+*.sublet
