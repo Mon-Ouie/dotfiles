@@ -363,7 +363,7 @@ Commands = Pry::CommandSet.new Pry::Commands do
       on :L, :less, "Only show methods set by the receiver"
       on :a, :more, "Show all of the methods, including those defined in Object"
       on :f, :filter, "Regular expression to filter methods and variables",
-        :optional => false, :default => ""
+        :argument => true, :default => ""
 
       on :l, :locals, "Show local variables"
       on :g, :globals, "Show global variables"
