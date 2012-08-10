@@ -43,3 +43,6 @@
 
 (setq org-refile-use-outline-path t)
 (setq org-refile-targets '((nil . (:maxlevel . 3))))
+
+(setq org-directory "~/doc")
+(setq org-default-notes-file (concat org-directory "/notes.org"))

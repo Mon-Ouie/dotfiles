@@ -27,6 +27,8 @@
 
 (global-set-key (kbd "<M-return>") 'align)
 
+(global-set-key (kbd "C-c c") 'org-capture)
+
 (defun rake-command (task)
   (concat (executable-find "ruby") " -S rake " task))
 
