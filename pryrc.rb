@@ -558,7 +558,7 @@ def mbench(n, runs, benches)
 end
 
 # Require current project
-$: << File.expand_path('.')
+$: << '.'
 
 if File.directory? "lib"
   $:.unshift File.expand_path("./lib")
