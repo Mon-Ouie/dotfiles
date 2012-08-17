@@ -10,6 +10,8 @@
 
 (global-set-key (kbd "M-»") 'windmove-right)
 (global-set-key (kbd "M-«") 'windmove-left)
+(global-set-key (kbd "M-p") 'windmove-up)
+(global-set-key (kbd "M-n") 'windmove-down)
 
 (global-set-key (kbd "M-[") 'backward-paragraph)
 (global-set-key (kbd "M-]") 'forward-paragraph)
