@@ -31,3 +31,4 @@
 
 (setq bbdb-file "~/doc/bbdb")
 (bbdb-initialize)
+(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
