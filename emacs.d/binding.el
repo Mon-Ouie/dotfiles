@@ -21,7 +21,16 @@
 (global-set-key (kbd "<backtab> <tab>") 'yas/expand-temp-snippet)
 (global-set-key (kbd "<backtab> s") 'yas/save-temp-snippet)
 
-(global-set-key (kbd "C-M-/") 'indent-region)
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun indent-region-or-buffer ()
+  (interactive)
+  (if mark-active (indent-region)
+    (indent-buffer)))
+
+(global-set-key (kbd "C-M-/") 'indent-region-or-buffer)
 
 ;; (require 'gist)
 ;; (global-set-key (kbd "C-c p") 'gist-region-or-buffer)
