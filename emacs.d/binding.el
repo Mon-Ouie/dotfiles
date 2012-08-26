@@ -40,21 +40,6 @@
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
-(defun rake-command (task)
-  (concat (executable-find "ruby") " -S rake " task))
-
-(defun rake-run-test-task()
-  (interactive)
-  (compile (rake-command "test")))
-
-(defun rake-run-ext-task()
-  (interactive)
-  (compile (rake-command "ext")))
-
-(defun rake-run-ext-rebuild-task()
-  (interactive)
-  (compile (rake-command "ext:rebuild")))
-
 (defun dictionary-list (word)
   (interactive "sSearch word: ")
   (compile (concat (executable-find "ruby")
@@ -77,15 +62,6 @@
 
 (global-set-key (kbd "C-c s") 'dictionary-list)
 (global-set-key (kbd "C-c d") 'dictionary-def)
-
-(global-set-key (kbd "C-c t") 'rake-run-test-task)
-(global-set-key (kbd "s-t") 'rake-run-test-task)
-
-(global-set-key (kbd "C-c e") 'rake-run-ext-task)
-(global-set-key (kbd "s-e") 'rake-run-ext-task)
-
-(global-set-key (kbd "C-c E") 'rake-run-ext-rebuild-task)
-(global-set-key (kbd "s-E") 'rake-run-ext-rebuild-task)
 
 (defun pry ()
   (interactive)
