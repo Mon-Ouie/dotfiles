@@ -17,6 +17,10 @@
 
 (ido-mode t)
 
+;; thanks to all those programs that use ~ and not ~/.config, ~ ends up being way
+;; too big…
+(setq ido-max-directory-size 40000)
+
 (require 'autopair)
 (autopair-global-mode t)
 
