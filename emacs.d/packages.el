@@ -2,8 +2,10 @@
 
 (require 'package)
 
-(add-to-list package-archives '("tromey" . "http://tromey.com/elpa/"))
-(add-to-list package-archives '("marmelade" . "http://marmalade-repo.org/packages/"))
+(setq package-archives
+      '(("marmelade" . "http://marmalade-repo.org/packages/")
+        ("tromey" . "http://tromey.com/elpa/")
+        ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq el-get-sources
       '((:name ruby-block)
