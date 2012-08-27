@@ -10,10 +10,6 @@
 (setq el-get-sources
       '((:name ruby-block)
         (:name ruby-end)
-        ;(:name rvm)
-        ;; (:name inf-ruby-bond :type git
-        ;;        :url "git://github.com/pd/inf-ruby-bond"
-        ;;        :load "inf-ruby-bond.el")
 
         (:name yaml-mode)
         (:name tuareg-mode)
@@ -28,20 +24,9 @@
         (:name zencoding-mode)
         (:name slime)
 
-	;; (:name pcache :type elpa)
-
-        ;; (:name gh :type git
-        ;;        :url "git://github.com/sigma/gh.el.git"
-        ;;        :load "gh.el")
-
-        ;; (:name gist :type git
-        ;;        :url "git://github.com/defunkt/gist.el"
-        ;;        :load "gist.el")
-
         (:name yari)
         (:name auctex)
         (:name magit)
-        (:name dictionary :type elpa)
 
         (:name popup :type elpa)
         (:name fringe-helper
@@ -65,7 +50,6 @@
                :load "column-marker.el")
 
         (:name color-theme)
-        ;(:name color-theme-twilight)
 
         (:name autopair)
         (:name yasnippet :type elpa)

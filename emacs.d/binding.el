@@ -34,14 +34,7 @@
     (indent-buffer)))
 
 (global-set-key (kbd "C-M-/") 'indent-region-or-buffer)
-
-;; (require 'gist)
-;; (global-set-key (kbd "C-c p") 'gist-region-or-buffer)
-;; (global-set-key (kbd "s-p") 'gist-region-or-buffer)
-
 (global-set-key (kbd "<M-return>") 'align)
-
-(global-set-key (kbd "C-c c") 'org-capture)
 
 (defun dictionary-list (word)
   (interactive
@@ -104,6 +97,8 @@
 
 (define-key org-mode-map (kbd "M-&") 'org-shiftmetaup)
 (define-key org-mode-map (kbd "M-|") 'org-shiftmetadown)
+
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; a keyboard that has two option keys.
 (defun map-meta-to-custom()
