@@ -82,6 +82,7 @@
                :type elpa
                :load "c-eldoc.el")
         (:name android-mode)
-        (:name ace-jump-mode :type elpa)))
+        (:name ace-jump-mode :type elpa)
+        (:name expand-region :type elpa)))
 
 (el-get 'sync)

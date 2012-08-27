@@ -85,6 +85,9 @@
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
 
+(require 'expand-region)
+(global-set-key (kbd "C-c C-y") 'er/expand-region)
+
 ;; Useful on a keyboard that has two option keys.
 (defun map-meta-to-custom()
   (setq mac-right-option-modifier 'none)
