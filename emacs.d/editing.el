@@ -15,11 +15,14 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+(require 'ido)
 (ido-mode t)
 
 ;; thanks to all those programs that use ~ and not ~/.config, ~ ends up being way
 ;; too big…
 (setq ido-max-directory-size 40000)
+
+(require 'dired+)
 
 (require 'autopair)
 (autopair-global-mode t)

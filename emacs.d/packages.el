@@ -8,8 +8,7 @@
         ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq el-get-sources
-      '((:name ruby-block)
-        (:name ruby-end)
+      '((:name ruby-end)
 
         (:name yaml-mode)
         (:name tuareg-mode)
@@ -34,7 +33,6 @@
                :url "http://nschum.de/src/emacs/fringe-helper/fringe-helper.el"
                :features fringe-helper
                :compile "fring-helper.el")
-        (:name flymake-extension :type emacswiki)
         (:name flymake-point)
         (:name flymake-fringe-icons
                :description "Add icons in the fringe, for flymake"
@@ -42,12 +40,6 @@
                :type http
                :url "https://gist.github.com/raw/759130/a85ebbc6bfc5fbab54677f4236e902b2da7bf41f/flymake-fringe-icons.el"
                :features flymake-fringe-icons)
-
-        (:name pos-tip)
-
-        (:name column-marker :type http
-               :url "http://www.emacswiki.org/emacs/download/column-marker.el"
-               :load "column-marker.el")
 
         (:name color-theme)
 
@@ -57,7 +49,6 @@
         (:name auto-complete :type elpa)
         (:name auto-complete-clang)
 
-        (:name dired+)
         (:name deft :type git
                :url "git://jblevins.org/git/deft.git"
                :load "deft.el")
