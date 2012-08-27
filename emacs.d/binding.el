@@ -41,7 +41,10 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (defun dictionary-list (word)
-  (interactive "sSearch word: ")
+  (interactive
+   (list
+    (read-string (format "Search word (%s): " (current-word))
+                 nil nil (current-word))))
   (compile (concat (executable-find "ruby")
                    " "
                    (getenv "HOME") "/code/rb/dict.rb"
@@ -51,7 +54,11 @@
                    "\"" word "\"")))
 
 (defun dictionary-def (word)
-  (interactive "sDefine word: ")
+  (interactive
+   (list
+    (read-string (format "Define word (%s): " (current-word))
+                 nil nil (current-word))))
+
   (compile (concat (executable-find "ruby")
                    " "
                    (getenv "HOME") "/code/rb/dict.rb"
