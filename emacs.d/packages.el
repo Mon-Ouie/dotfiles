@@ -1,11 +1,9 @@
 (require 'el-get)
 
 (require 'package)
-(setq package-archives (cons '("tromey" . "http://tromey.com/elpa/")
-                             package-archives))
 
-(setq package-archives (cons '("marmelade" . "http://marmalade-repo.org/packages/")
-                             package-archives))
+(add-to-list package-archives '("tromey" . "http://tromey.com/elpa/"))
+(add-to-list package-archives '("marmelade" . "http://marmalade-repo.org/packages/"))
 
 (setq el-get-sources
       '((:name ruby-block)
@@ -81,6 +79,7 @@
         (:name c-eldoc
                :type elpa
                :load "c-eldoc.el")
-        (:name android-mode)))
+        (:name android-mode)
+        (:name ace-jump-mode :type elpa)))
 
 (el-get 'sync)
