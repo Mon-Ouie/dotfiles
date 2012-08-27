@@ -83,6 +83,8 @@
                :load "c-eldoc.el")
         (:name android-mode)
         (:name ace-jump-mode :type elpa)
-        (:name expand-region :type elpa)))
+        (:name expand-region :type elpa)
+        (:name multiple-cursors :type git
+               :url "git://github.com/magnars/multiple-cursors.el.git")))
 
 (el-get 'sync)

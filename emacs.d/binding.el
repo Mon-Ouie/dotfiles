@@ -88,7 +88,11 @@
 (require 'expand-region)
 (global-set-key (kbd "C-c C-y") 'er/expand-region)
 
-;; Useful on a keyboard that has two option keys.
+(require 'multiple-cursors)
+(global-set-key (kbd "C-ù") 'mc/mark-prev-like-this)
+(global-set-key (kbd "C-’") 'mc/mark-next-like-this)
+
+;; a keyboard that has two option keys.
 (defun map-meta-to-custom()
   (setq mac-right-option-modifier 'none)
   (setq mac-option-modifier 'meta))

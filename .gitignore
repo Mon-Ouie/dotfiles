@@ -5,6 +5,7 @@ backup/
 /emacs.d/el-get/
 /emacs.d/elpa/
 /emacs.d/flymake.tmp/
+/emacs.d/.*
 .svn
 /emacs.d/url/cookies
 /emacs.d/.org-id-locations
