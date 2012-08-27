@@ -93,6 +93,15 @@
 (global-set-key (kbd "C-’") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-’") 'mc/mark-all-like-this)
 
+(define-key org-mode-map (kbd "C->") 'org-metaright)
+(define-key org-mode-map (kbd "C-<") 'org-metaleft)
+
+(define-key org-mode-map (kbd "C-”") 'org-shiftmetaright)
+(define-key org-mode-map (kbd "C-“") 'org-shiftmetaleft)
+
+(define-key org-mode-map (kbd "M-&") 'org-shiftmetaup)
+(define-key org-mode-map (kbd "M-|") 'org-shiftmetadown)
+
 ;; a keyboard that has two option keys.
 (defun map-meta-to-custom()
   (setq mac-right-option-modifier 'none)
