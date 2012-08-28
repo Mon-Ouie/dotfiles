@@ -129,6 +129,10 @@ fi
 
 cr() { coderay $1 -term | less -r }
 
+play-dl() {
+    mplayer -cache 8192 -cache-min 4 $*
+}
+
 play-stream() {
     mplayer -playlist $1 -dumpstream -dumpfile /dev/fd/3 3>&1 1>&2 | tee $2 | mplayer -
 }
