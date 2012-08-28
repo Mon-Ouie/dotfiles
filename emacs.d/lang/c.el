@@ -55,8 +55,9 @@
 
 (require 'auto-complete-clang)
 (add-hook 'c-mode-common-hook
-          '(lambda()
-             (setq ac-sources (append '(ac-source-clang) ac-sources))))
+          '(lambda ()
+             (unless (string= major-mode "java-mode")
+               (setq ac-sources (append '(ac-source-clang) ac-sources)))))
 
 (setq ac-clang-flags `("-I." "-I.." ,@c-include-dirs))
 

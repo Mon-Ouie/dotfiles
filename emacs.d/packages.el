@@ -60,6 +60,8 @@
         (:name ace-jump-mode :type elpa)
         (:name expand-region :type elpa)
         (:name multiple-cursors :type git
-               :url "git://github.com/magnars/multiple-cursors.el.git")))
+               :url "git://github.com/magnars/multiple-cursors.el.git")
+        (:name eclim :type git
+               :url "git://github.com/senny/emacs-eclim.git")))
 
 (el-get 'sync)
