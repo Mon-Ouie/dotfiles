@@ -30,7 +30,7 @@
 
 (defun indent-region-or-buffer ()
   (interactive)
-  (if mark-active (indent-region)
+  (if (use-region-p) (indent-region (region-beginning) (region-end))
     (indent-buffer)))
 
 (global-set-key (kbd "C-M-/") 'indent-region-or-buffer)

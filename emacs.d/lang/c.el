@@ -2,6 +2,9 @@
 
 (defvar c-include-dirs
   '("-I/usr/include"
+    "-I/usr/include/c++/4.7.1"
+    "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/"
+    "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/32/"
     "-I/usr/include/ruby-1.9.1"
     "-I/usr/include/ruby-1.9.1/x86_64-linux"
     "-I/usr/include/freetype2"
