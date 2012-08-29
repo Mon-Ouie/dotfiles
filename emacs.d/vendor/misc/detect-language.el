@@ -11,7 +11,7 @@
 
 (defvar detect-language-punctuation
   '(?\( ?\) ?\[ ?\] ?, ?. ?{ ?} ?? ?! ?\; ?: ?\" ?\' ?« ?»
-        ?… ?“ ?” ?/ ?— ?−)
+        ?… ?“ ?” ?/ ?— ?− ?_ ?* ?+)
   "Characters that will be stripped off words when retrieving them.")
 
 (defvar detect-language-db-file "~/.emacs.d/.detect_language.db"
