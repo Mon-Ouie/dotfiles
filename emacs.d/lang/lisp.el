@@ -14,7 +14,7 @@
               (setq autopair-dont-activate t)
               (autopair-mode -1)))
 
-(add-hook 'lisp-mode-hook #'(lambda () (auto-fill-mode t)))
+(add-hook 'lisp-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'lisp-mode-hook
           #'(lambda ()

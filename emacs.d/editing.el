@@ -30,7 +30,7 @@
 (require 'linum)
 (global-linum-mode t)
 
-(add-hook 'fundamental-mode-hook 'auto-fill-mode)
+(add-hook 'after-change-major-mode-hook 'turn-on-auto-fill)
 
 (require 'magit)
 
