@@ -55,6 +55,8 @@
 \\pagestyle{Ruled}
 ")
 
+(require 'org-latex)
+
 (add-to-list 'org-export-latex-classes
              `("memoir" ,memoir-header-code
 
