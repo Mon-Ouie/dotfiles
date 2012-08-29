@@ -41,6 +41,12 @@
                :url "https://gist.github.com/raw/759130/a85ebbc6bfc5fbab54677f4236e902b2da7bf41f/flymake-fringe-icons.el"
                :features flymake-fringe-icons)
 
+        (:name ispell-multi :type http
+               :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/ispell-multi.el")
+        (:name flyspell-babel :type http
+               :depends ispell-multi
+               :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/flyspell-babel.el")
+
         (:name color-theme)
 
         (:name autopair)
