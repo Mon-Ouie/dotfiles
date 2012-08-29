@@ -46,3 +46,27 @@
 
 (setq org-directory "~/doc")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
+
+(setq memoir-header-code
+               "\\documentclass[11pt]{memoir}
+\\nouppercaseheads
+\\pagestyle{Ruled}
+")
+
+(add-to-list 'org-export-latex-classes
+             `("memoir" ,memoir-header-code
+
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")))
+
+(add-to-list 'org-export-latex-classes
+             `("memoir-with-part" ,memoir-header-code
+
+               ("\\part{%s}" . "\\part*{%s}")
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
