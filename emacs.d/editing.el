@@ -80,6 +80,7 @@ makes)."
 
 ;; Flyspell
 (require 'flyspell)
+(require 'detect-language)
 (setq-default ispell-program-name "aspell")
 (ispell-change-dictionary "fr")
 

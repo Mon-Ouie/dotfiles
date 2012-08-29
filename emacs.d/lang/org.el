@@ -2,6 +2,8 @@
 (require 'org-habit)
 
 (add-hook 'org-mode-hook '(lambda () (auto-fill-mode t)))
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+(add-hook 'org-mode-hook 'detect-language)
 
 (setq org-export-latex-listings 'minted)
 
