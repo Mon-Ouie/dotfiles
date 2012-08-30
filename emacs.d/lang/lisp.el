@@ -1,7 +1,7 @@
 (require 'slime)
 (require 'slime-autoloads)
 
-(setq inferior-lisp-program "/usr/bin/clisp")
+(setq inferior-lisp-program (executable-find "sbcl"))
 
 (slime-setup)
 

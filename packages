@@ -28,7 +28,7 @@ aspell-uk
 aspell-nl
 ocaml
 ghc
-clisp
+sbcl
 xclip
 epdfview
 ncmpcpp
