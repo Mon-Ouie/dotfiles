@@ -1,6 +1,7 @@
 (require 'deft)
+(require 'poem-mode)
 
-(defun poem()
+(defun poem ()
   (interactive)
   (setq deft-extension "poem")
   (setq deft-directory "~/doc/poems/")
