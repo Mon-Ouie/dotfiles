@@ -15,6 +15,8 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+(setq x-select-enable-primary t)
+
 (require 'ido)
 (ido-mode t)
 
