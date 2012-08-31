@@ -1,7 +1,7 @@
 (require 'deft)
 (require 'org)
 
-(defun doc()
+(defun doc ()
   (interactive)
   (setq deft-extension "org")
   (setq deft-directory "~/doc/cours/")
