@@ -17,14 +17,14 @@
   "Face for the title of the poem."
   :group 'poem-faces)
 
-(defface poem-first--verse-char-face
+(defface poem-first-verse-char-face
   '((t (:inherit default
                  :weight bold)))
   "Face for the first character of each verse."
   :group 'poem-faces)
 
-(defvar poem-title-face 'poem-mode-title-face)
-(defvar poem-first-verse-char-face 'poem-mode-first-verse-char-face)
+(defvar poem-title-face 'poem-title-face)
+(defvar poem-first-verse-char-face 'poem-first-verse-char-face)
 
 (defun poem-title-matcher (limit)
   (let ((end-of-line (position ?\n (buffer-string))))
