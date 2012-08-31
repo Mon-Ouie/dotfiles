@@ -76,7 +76,8 @@
 (global-set-key [f6] 'poem)
 (global-set-key [f7] 'doc)
 
-(global-set-key (kbd "C-x B") 'buffer-menu)
+(require 'ibuffer)
+(global-set-key (kbd "C-x B") 'ibuffer)
 
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
