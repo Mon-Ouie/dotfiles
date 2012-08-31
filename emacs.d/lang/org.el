@@ -5,6 +5,8 @@
 (add-hook 'org-mode-hook 'turn-on-flyspell)
 (add-hook 'org-mode-hook 'detect-language)
 
+(setq org-src-fontify-natively t)
+
 (setq org-export-latex-listings 'minted)
 
 (setq org-export-latex-packages-alist ; (options package-name required-for-previews)
