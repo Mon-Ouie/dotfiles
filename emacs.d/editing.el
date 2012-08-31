@@ -18,6 +18,9 @@
 (setq x-select-enable-primary t)
 (setq windmove-wrap-around t)
 
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
 (require 'ido)
 (ido-mode t)
 
