@@ -15,16 +15,17 @@
         ("" "mhchem" t)   ;; typesetting chemistry
         ))
 
-(setq org-file-apps
-      `(("\\.pdf\\'" . ,(if on-osx "open %s" "xdg-open %s"))
-        ("\\.png\\'" . ,(if on-osx "open %s" "feh %s"))
-        ("\\.gif\\'" . ,(if on-osx "open %s" "feh %s"))
-        ("\\.jpeg\\'" . ,(if on-osx "open %s" "feh %s"))
-        ("\\.jpg\\'" . ,(if on-osx "open %s" "feh %s"))
-        ("\\.bmp\\'" . ,(if on-osx "open %s" "feh %s"))
-        (auto-mode . emacs)
-        ("\\.mm\\'" . default)
-        ("\\.x?html?\\'" . default)))
+(let ((use-default '(if on-osx "open %s" "xdg-open %s")))
+  (setq org-file-apps
+        `(("\\.pdf\\'" . ,use-default)
+          ("\\.png\\'" . ,use-default)
+          ("\\.gif\\'" . ,use-default)
+          ("\\.jpeg\\'" . ,use-default)
+          ("\\.jpg\\'" . ,use-default)
+          ("\\.bmp\\'" . ,use-default)
+          (auto-mode . emacs)
+          ("\\.mm\\'" . default)
+          ("\\.x?html?\\'" . default))))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
