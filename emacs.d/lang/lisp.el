@@ -28,3 +28,5 @@
                               ac-source-symbols
                               ac-source-variables)
                             ac-sources))))
+
+(require 'ielm) ;; REPL for elisp
