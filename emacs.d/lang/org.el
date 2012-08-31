@@ -52,6 +52,14 @@
 (require 'org-contacts)
 (setq org-contacts-files '("~/doc/contacts.org"))
 
+(require 'org-capture)
+(add-to-list 'org-capture-templates
+             '("c" "Contacts" entry (file "~/doc/contacts.org")
+               "* %(org-contacts-template-name)
+   :PROPERTIES:
+   :EMAIL: %(org-contacts-template-email)
+   :END:"))
+
 (require 'org-latex)
 
 (setq memoir-header-code
