@@ -6,6 +6,7 @@
 (add-hook 'org-mode-hook 'detect-language)
 
 (setq org-src-fontify-natively t)
+(setq org-hide-leading-stars t)
 
 (setq org-export-latex-listings 'minted)
 
@@ -16,6 +17,11 @@
 
 (setq org-file-apps
       `(("\\.pdf\\'" . ,(if on-osx "open %s" "xdg-open %s"))
+        ("\\.png\\'" . ,(if on-osx "open %s" "feh %s"))
+        ("\\.gif\\'" . ,(if on-osx "open %s" "feh %s"))
+        ("\\.jpeg\\'" . ,(if on-osx "open %s" "feh %s"))
+        ("\\.jpg\\'" . ,(if on-osx "open %s" "feh %s"))
+        ("\\.bmp\\'" . ,(if on-osx "open %s" "feh %s"))
         (auto-mode . emacs)
         ("\\.mm\\'" . default)
         ("\\.x?html?\\'" . default)))
