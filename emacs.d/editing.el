@@ -16,6 +16,7 @@
 (set-keyboard-coding-system 'utf-8)
 
 (setq x-select-enable-primary t)
+(setq windmove-wrap-around t)
 
 (require 'ido)
 (ido-mode t)
