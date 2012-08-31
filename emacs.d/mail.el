@@ -27,8 +27,5 @@
 (setq message-sendmail-envelope-from 'header)
 (setq sendmail-program "/usr/bin/msmtp")
 
-(require 'bbdb)
-
-(setq bbdb-file "~/doc/bbdb")
-(bbdb-initialize)
-(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
+(require 'org-contacts)
+(org-contacts-gnus-insinuate)

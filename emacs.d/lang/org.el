@@ -49,13 +49,16 @@
 (setq org-directory "~/doc")
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
+(require 'org-contacts)
+(setq org-contacts-files '("~/doc/contacts.org"))
+
+(require 'org-latex)
+
 (setq memoir-header-code
                "\\documentclass[11pt]{memoir}
 \\nouppercaseheads
 \\pagestyle{Ruled}
 ")
-
-(require 'org-latex)
 
 (add-to-list 'org-export-latex-classes
              `("memoir" ,memoir-header-code
