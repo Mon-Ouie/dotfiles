@@ -1,9 +1,7 @@
-(require 'slime)
-(require 'slime-autoloads)
-
 (setq inferior-lisp-program (executable-find "sbcl"))
 
-(slime-setup)
+(require 'slime-autoloads)
+(slime-setup '(slime-fancy))
 
 (add-hook 'comint-mode-hook
           #'(lambda ()
