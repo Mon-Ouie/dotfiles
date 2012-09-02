@@ -90,3 +90,39 @@ makes)."
 
 ;; Annoying echo in inf-ruby
 (setq-default comint-process-echoes nil)
+
+;; ibuffer
+
+(require 'ibuffer)
+
+(setq ibuffer-modified-char ?✍)
+(setq ibuffer-read-only-char ?✗)
+(setq ibuffer-marked-char ?✓)
+(setq ibuffer-deletion-char ?␡)
+
+(setq ibuffer-show-empty-filter-groups nil)
+
+(setq ibuffer-saved-filters
+      '(("doc" ((or (mode . org-mode)
+                    (mode . org-agenda-mode)
+                    (mode . calendar)
+                    (mode . poem-mode)
+                    (mode . latex-mode)
+                    (mode . text-mode)
+                    (mode . markdown-mode))))
+        ("mail" ((or (mode . gnus-group-mode)
+                     (mode . gnus-article-mode)
+                     (mode . mail-mode)
+                     (mode . message-mode)
+                     (mode . gnus-server-mode)
+                     (mode . gnus-summary-mode))))
+        ("code" ((or (mode . emacs-lisp-mode)
+                     (mode . cperl-mode)
+                     (mode . c-mode)
+                     (mode . java-mode)
+                     (mode . idl-mode)
+                     (mode . lisp-mode)
+                     (mode . io-mode)
+                     (mode . haskell-mode)
+                     (mode . smalltalk-mode)
+                     (mode . ruby-mode))))))
