@@ -174,6 +174,12 @@ sync-file () {
     rsync -avuP "$to"   "$from" || return 1
 }
 
+# Dear websites,
+# Just because I use wget to download one of your files doesn't mean that I'm a robot.
+wget-human() {
+    wget -U "Totally a human" $*
+}
+
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
