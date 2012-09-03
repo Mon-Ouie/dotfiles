@@ -144,9 +144,9 @@ the total amonut of words that have been seen."
   "Builds a hash table showing the score for a string in every language."
   (let ((table (make-hash-table :test 'equal))
         (words (detect-language-get-words string)))
-    (dolist (lang (detect-language-known-languages))
-      (puthash lang (detect-language-score-for lang words) table))
-    table))
+      (dolist (lang (detect-language-known-languages))
+        (puthash lang (detect-language-score-for lang words) table))
+      table))
 
 (defun detect-language-max-by (func list)
   "Returns the value in a list for which a certain function returns the smallest
@@ -160,10 +160,14 @@ value."
             (rest list) :initial-value (first list))))
 
 (defun detect-language-for (string)
-  "Returns the language that a string is most likely to be written in."
+  "Returns the language that a string is most likely to be written in, or nil
+if the score is null for all known languages."
   (let ((scores (detect-language-score-map string))
         (langs  (detect-language-known-languages)))
-    (detect-language-max-by #'(lambda (l) (gethash l scores)) langs)))
+    (let ((best-lang
+           (detect-language-max-by #'(lambda (l) (gethash l scores)) langs)))
+      (if (zerop (gethash best-lang scores)) nil
+        best-lang))))
 
 (defun detect-language ()
   "Attempts to detect the language of the current buffer and change ispell
