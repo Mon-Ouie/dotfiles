@@ -78,6 +78,8 @@
 
 (require 'ibuffer)
 (global-set-key (kbd "C-x B") 'ibuffer)
+(define-key ibuffer-mode-map (kbd "C-x C-f") 'ido-find-file)
+(define-key ibuffer-mode-map (kbd "C-x C-f") 'ido-switch-buffer)
 
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-c SPC") 'ace-jump-mode)
