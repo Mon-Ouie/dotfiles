@@ -14,6 +14,9 @@
         ?… ?“ ?” ?/ ?— ?− ?_ ?* ?+)
   "Characters that will be stripped off words when retrieving them.")
 
+(defvar detect-language-word-regexp "[ \f\t\n\r\v -—+|=*−]+"
+  "Regular expression to split a text into words.")
+
 (defvar detect-language-db-file "~/.emacs.d/.detect_language.db"
   "File to store the word frequency database into.")
 
@@ -96,7 +99,7 @@
   "Maps a string to a list of words."
   (remove ""
           (mapcar #'(lambda (w) (downcase (detect-language-strip-punctuation w)))
-                  (split-string string "[ \f\t\n\r\v ]+"))))
+                  (split-string string detect-language-word-regexp))))
 
 (defun detect-language-mark-word (lang word)
   "Marks a word as being part of a language, increasing its score."
