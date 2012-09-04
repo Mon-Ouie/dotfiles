@@ -21,3 +21,4 @@ sync_dir () {
 
 sync_dir "mpd"
 sync_dir "picture"
+sync_dir "doc"
