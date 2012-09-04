@@ -133,6 +133,10 @@ play-stream() {
     mplayer -playlist $1 -dumpstream -dumpfile /dev/fd/3 3>&1 1>&2 | tee $2 | mplayer -
 }
 
+play-random() {
+    mplayer "$1/$(ls "$1" | sort -R | head -n 1)"
+}
+
 to-android() {
     mencoder $1 -o $2 \
         -ovc lavc -oac lavc \
