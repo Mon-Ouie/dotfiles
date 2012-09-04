@@ -57,11 +57,12 @@ backup_dir emacs.d                 ~/.emacs.d
 backup_dir subtle                  ~/.config/subtle
 
 echo "Files you may still need to install:"
-echo "  — ~/.getmail/"
+echo "  — ~/.offlineimaprc"
 echo "  — ~/code/dotfiles/github.gitconfig"
 echo "  — ~/mpd/"
 echo "  — ~/code/ [includes some shell scripts]"
 echo "  — ~/doc/"
+echo "  — ~/mail/"
 echo "  — ~/picture/"
 echo "  — ~/.msmtprc"
 echo "  — ~/.weechat"
