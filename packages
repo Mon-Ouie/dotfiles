@@ -28,7 +28,7 @@ aspell-uk
 aspell-nl
 ocaml
 ghc
-clisp
+sbcl
 xclip
 epdfview
 ncmpcpp
@@ -48,9 +48,11 @@ cups-filters
 ghostscripts
 gsfonts
 gdb
-getmail
+offlineimap
 msmtp
 python2-pygments
 texlive-most
 texlive-lang
 gnuplot
+dictd
+eclim

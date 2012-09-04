@@ -129,6 +129,10 @@ fi
 
 cr() { coderay $1 -term | less -r }
 
+play-dl() {
+    mplayer -cache 8192 -cache-min 4 $*
+}
+
 play-stream() {
     mplayer -playlist $1 -dumpstream -dumpfile /dev/fd/3 3>&1 1>&2 | tee $2 | mplayer -
 }
@@ -172,6 +176,12 @@ sync-file () {
 
     rsync -avuP "$from" "$to" || return 1
     rsync -avuP "$to"   "$from" || return 1
+}
+
+# Dear websites,
+# Just because I use wget to download one of your files doesn't mean that I'm a robot.
+wget-human() {
+    wget -U "Totally a human" $*
 }
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

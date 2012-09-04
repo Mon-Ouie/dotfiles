@@ -2,6 +2,9 @@
 
 (defvar c-include-dirs
   '("-I/usr/include"
+    "-I/usr/include/c++/4.7.1"
+    "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/"
+    "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/32/"
     "-I/usr/include/ruby-1.9.1"
     "-I/usr/include/ruby-1.9.1/x86_64-linux"
     "-I/usr/include/freetype2"
@@ -52,8 +55,9 @@
 
 (require 'auto-complete-clang)
 (add-hook 'c-mode-common-hook
-          '(lambda()
-             (setq ac-sources (append '(ac-source-clang) ac-sources))))
+          '(lambda ()
+             (unless (string= major-mode "java-mode")
+               (setq ac-sources (append '(ac-source-clang) ac-sources)))))
 
 (setq ac-clang-flags `("-I." "-I.." ,@c-include-dirs))
 

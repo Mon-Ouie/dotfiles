@@ -3,7 +3,7 @@ configure :mail do |s|
 
   s.icon = Subtlext::Icon.new( "mail.xbm" )
 
-  s.dir = File.join(s.config[:dir] || File.join(Dir.home, "mail"), "inbox/new")
+  s.dir = File.join(Dir.home, "mail")
   s.new = if col = s.config[:new]
             Subtlext::Color.new(col)
           else
@@ -12,11 +12,11 @@ configure :mail do |s|
 end
 
 on :run do |s|
-  count = Dir.entries(s.dir).size - 2
+  new = Dir.glob("#{s.dir}/**/new/*").any?
 
-  if count.zero?
-    s.data = s.icon.to_s
-  else
+  if new
     s.data = s.new + s.icon
+  else
+    s.data = s.icon.to_s
   end
 end

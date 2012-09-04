@@ -17,9 +17,12 @@
 
   (define-key LaTeX-mode-map "\C-cw" 'latex-word-count))
 
+(autoload 'flyspell-babel-setup "flyspell-babel")
+
 (dolist (hook '(LaTeX-mode-hook latex-mode-hook))
   (add-hook hook
             (lambda()
               (flyspell-mode t)
               (auto-fill-mode t)
-              (texcount-setup))))
+              (texcount-setup)))
+  (add-hook hook 'flyspell-babel-setup))
