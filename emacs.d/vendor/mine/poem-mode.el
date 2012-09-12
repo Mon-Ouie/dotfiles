@@ -7,7 +7,7 @@
 
 (defgroup poem-faces nil
   "Faces used in poem-mode."
-  :group 'poem-mode
+  :group 'poem
   :group 'faces)
 
 (defface poem-title-face
