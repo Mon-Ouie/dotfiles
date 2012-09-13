@@ -1,7 +1,8 @@
 (setq inferior-lisp-program (executable-find "sbcl"))
 
 (require 'slime-autoloads)
-(slime-setup '(slime-fancy))
+(slime-setup '(slime-fancy slime-indentation slime-package-fu
+               slime-fontifying-fu))
 
 (add-hook 'sldb-mode-hook
           #'(lambda ()
