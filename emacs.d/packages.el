@@ -50,6 +50,7 @@
         (:name color-theme)
 
         (:name autopair)
+        (:name paredit) ; plays better with slime for lisp
         (:name yasnippet :type elpa)
 
         (:name auto-complete :type elpa)
