@@ -13,6 +13,8 @@
           #'(lambda ()
               (push 'ac-source-slime ac-sources)))
 
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+
 (add-hook 'emacs-lisp-mode-hook
           #'(lambda ()
               (setq ac-sources
