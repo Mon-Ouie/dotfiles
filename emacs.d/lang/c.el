@@ -35,6 +35,7 @@
   (mapconcat #'identity c-include-dirs " "))
 
 (add-hook 'c-mode-common-hook 'turn-on-auto-fill)
+(add-hook 'c-mode-common-hook 'rainbow-mode)
 
 (add-hook 'c-mode-common-hook
           (lambda ()

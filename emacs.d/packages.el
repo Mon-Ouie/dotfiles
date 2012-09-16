@@ -69,6 +69,7 @@
         (:name multiple-cursors :type git
                :url "git://github.com/magnars/multiple-cursors.el.git")
         (:name eclim :type git
-               :url "git://github.com/senny/emacs-eclim.git")))
+               :url "git://github.com/senny/emacs-eclim.git")
+        (:name rainbow-mode :type elpa)))
 
 (el-get 'sync)

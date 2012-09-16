@@ -26,6 +26,7 @@
 
 (dolist (hook '(lisp-mode-hook emacs-lisp-mode-hook))
   (add-hook hook 'turn-on-auto-fill)
+  (add-hook hook 'rainbow-mode)
   (add-hook hook
             #'(lambda ()
                 (autopair-mode -1)

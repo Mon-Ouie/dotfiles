@@ -25,4 +25,5 @@
               (flyspell-mode t)
               (auto-fill-mode t)
               (texcount-setup)))
-  (add-hook hook 'flyspell-babel-setup))
+  (add-hook hook 'flyspell-babel-setup)
+  (add-hook hook 'rainbow-mode))
