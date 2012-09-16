@@ -10,6 +10,8 @@
                              (ruby-block-mode t)
                              (column-marker-2 80)))
 
+(add-hook 'ruby-mode-hook 'rainbow-mode)
+
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
