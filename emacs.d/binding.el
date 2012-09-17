@@ -103,6 +103,9 @@
 
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(define-key ac-completing-map "\r" nil)
+(define-key ac-completing-map [return] nil)
+
 ;; a keyboard that has two option keys.
 (defun map-meta-to-custom()
   (setq mac-right-option-modifier 'none)
