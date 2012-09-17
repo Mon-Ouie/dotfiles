@@ -8,7 +8,9 @@
         ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq el-get-sources
-      '((:name ruby-end)
+      `((:name ruby-end)
+        (:name ruby-dev :type git
+               :url ,(concat (getenv "HOME") "/code/repos/ruby-dev"))
 
         (:name yaml-mode)
         (:name tuareg-mode)

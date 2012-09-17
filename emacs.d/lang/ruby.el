@@ -12,6 +12,10 @@
 
 (add-hook 'ruby-mode-hook 'rainbow-mode)
 
+(setq ruby-dev-script-path (expand-file-name "ruby-dev.rb"
+                                             (el-get-package-directory "ruby-dev")))
+(add-hook 'ruby-mode-hook 'turn-on-ruby-dev)
+
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.irbrc" . ruby-mode))
 
