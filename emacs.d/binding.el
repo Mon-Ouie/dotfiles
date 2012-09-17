@@ -106,6 +106,9 @@
 (define-key ac-completing-map "\r" nil)
 (define-key ac-completing-map [return] nil)
 
+(require 'inf-haskell)
+(define-key haskell-mode-map (kbd "C-c C-c") 'inferior-haskell-reload-file)
+
 ;; a keyboard that has two option keys.
 (defun map-meta-to-custom()
   (setq mac-right-option-modifier 'none)
