@@ -10,7 +10,7 @@
 (setq el-get-sources
       `((:name ruby-end)
         (:name ruby-dev :type git
-               :url ,(concat (getenv "HOME") "/code/repos/ruby-dev"))
+               :url "https://github.com/Mon-Ouie/ruby-dev.el.git")
 
         (:name yaml-mode)
         (:name tuareg-mode)
