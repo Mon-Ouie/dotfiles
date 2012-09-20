@@ -13,9 +13,11 @@
 (setq org-export-latex-packages-alist ; (options package-name required-for-previews)
       '(("" "minted" nil) ;; syntax highlighting
         ("" "mhchem" t)   ;; typesetting chemistry
+        ("" "tikz" nil)
+        ("" "amsmath" t)
         ))
 
-(let ((use-default '(if on-osx "open %s" "xdg-open %s")))
+(let ((use-default (if on-osx "open %s" "xdg-open %s")))
   (setq org-file-apps
         `(("\\.pdf\\'" . ,use-default)
           ("\\.png\\'" . ,use-default)
