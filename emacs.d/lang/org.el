@@ -13,8 +13,8 @@
 (setq org-export-latex-packages-alist ; (options package-name required-for-previews)
       '(("" "minted" nil) ;; syntax highlighting
         ("" "mhchem" t)   ;; typesetting chemistry
-        ("" "tikz" nil)
-        ("" "amsmath" t)
+        ("" "tikz" nil)   ;; Graphs (breaks reviews)
+        ("" "amsmath" t)  ;; Some math symbols
         ))
 
 (let ((use-default (if on-osx "open %s" "xdg-open %s")))
