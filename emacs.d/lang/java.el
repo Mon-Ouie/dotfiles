@@ -1,6 +1,8 @@
 (require 'eclim)
 (require 'eclimd)
 
+(require 'bluej)
+
 (setq eclim-auto-save t)
 (global-eclim-mode)
 
