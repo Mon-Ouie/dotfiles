@@ -106,6 +106,10 @@
 (define-key ac-completing-map "\r" nil)
 (define-key ac-completing-map [return] nil)
 
+(require 'paredit)
+(define-key paredit-mode-map (kbd "<M-up>") nil)
+(define-key paredit-mode-map (kbd "<M-down>") nil)
+
 (require 'inf-haskell)
 (define-key haskell-mode-map (kbd "C-c C-c") 'inferior-haskell-reload-file)
 
