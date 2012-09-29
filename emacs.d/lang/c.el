@@ -43,7 +43,8 @@
                                     '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
 (require 'column-marker)
 (add-hook 'c-mode-common-hook '(lambda ()
-                                 (flymake-mode t)
+                                 (unless (string= major-mode "java-mode")
+                                   (flymake-mode t))
                                  (column-marker-2 80)))
 
 (setq-default c-default-style "k&r")
