@@ -4,7 +4,7 @@
 (defun eclim-package-and-class ()
   (let ((package-name (eclim--java-current-package))
         (class-name   (eclim--java-current-class-name)))
-    (if package-name (concat package-name "." class-namen)
+    (if package-name (concat package-name "." class-name)
       class-name)))
 
 (require 'bluej)
