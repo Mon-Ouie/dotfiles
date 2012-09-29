@@ -1,6 +1,12 @@
 (require 'eclim)
 (require 'eclimd)
 
+(defun eclim-package-and-class ()
+  (let ((package-name (eclim--java-current-package))
+        (class-name   (eclim--java-current-class-name)))
+    (if package-name (concat package-name "." class-namen)
+      class-name)))
+
 (require 'bluej)
 
 (setq eclim-auto-save t)
@@ -9,8 +15,6 @@
 (require 'ac-emacs-eclim-source)
 (add-hook 'eclim-mode-hook
           (lambda ()
-            (flymake-mode -1)
-
             (add-to-list 'ac-sources 'ac-source-emacs-eclim)
             (add-to-list 'ac-sources 'ac-source-emacs-eclim-c-dot)))
 
