@@ -7,6 +7,8 @@
     (if package-name (concat package-name "." class-name)
       class-name)))
 
+(setq eclim-auto-save nil)
+
 (require 'bluej)
 
 (setq eclim-auto-save t)
