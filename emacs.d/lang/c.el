@@ -1,6 +1,6 @@
 (require 'cc-mode)
 
-(defvar c-include-dirs
+(setq c-include-dirs
   '("-I/usr/include"
     "-I/usr/include/c++/4.7.1"
     "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/"
