@@ -29,7 +29,7 @@
     "-I/usr/include/QtWebKit"
     "-I/usr/include/QtXml"
     "-I/usr/include/QtXmlPatterns"
-    ))
+    "-I/usr/lib/clang/3.1/include"))
 
 (defun c-include-dirs-string ()
   (mapconcat #'identity c-include-dirs " "))
