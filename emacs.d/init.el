@@ -19,7 +19,7 @@
       (unless (string-match-p "^\\.\\.?$" elem) ;; Ignore . and ..
 	(let ((filename (concat dir elem)))
 	  (if (file-directory-p filename)
-	      (push filename load-path)))))))
+	      (add-to-list 'load-path filename)))))))
 
 (add-vendor-directory (config-dir "vendor"))
 (add-vendor-directory (config-dir "el-get"))
