@@ -23,6 +23,7 @@
 
 (add-vendor-directory (config-dir "vendor"))
 (add-vendor-directory (config-dir "el-get"))
+(add-vendor-directory "/usr/local/share/emacs/site-lisp/")
 
 (load-file (config-file "env.el"))
 (load-file (config-file "packages.el"))
