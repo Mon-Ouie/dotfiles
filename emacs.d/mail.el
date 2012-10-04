@@ -17,3 +17,16 @@
 (setq sendmail-program "/usr/bin/msmtp")
 
 (require 'org-contacts)
+
+;; Switch to gnu's HTML renderer
+(defun mail-shr-html2text ()
+  (let* ((doc (with-temp-buffer
+                (insert html)
+                (libxml-parse-xml-region (point-min) (point-max))))
+         (content (with-temp-buffer
+                    (shr-insert-document doc)
+                    (buffer-string))))
+    (erase-buffer)
+    (insert content)))
+
+(fset 'html2text 'mail-shr-html2text)
