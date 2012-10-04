@@ -20,13 +20,8 @@
 
 ;; Switch to gnu's HTML renderer
 (defun mail-shr-html2text ()
-  (let* ((doc (with-temp-buffer
-                (insert html)
-                (libxml-parse-xml-region (point-min) (point-max))))
-         (content (with-temp-buffer
-                    (shr-insert-document doc)
-                    (buffer-string))))
+  (let ((doc (libxml-parse-xml-region (point-min) (point-max))))
     (erase-buffer)
-    (insert content)))
+    (shr-insert-document doc)))
 
 (fset 'html2text 'mail-shr-html2text)
