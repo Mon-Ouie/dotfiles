@@ -8,6 +8,7 @@
          ("/Private/INBOX"  . ?p)))
 
 (setq mu4e-get-mail-command "offlineimap")
+(setq mu4e-view-show-addresses t)
 
 (setq user-mail-address "mon.ouie@gmail.com")
 (setq user-full-name    "Mon ouïe")
