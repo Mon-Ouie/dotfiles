@@ -15,7 +15,8 @@
         ("" "mhchem" t)   ;; typesetting chemistry
         ("" "tikz" nil)   ;; Graphs (breaks reviews)
         ("" "amsmath" t)  ;; Some math symbols
-        ))
+        ("" "mathtools" t)
+        ("" "relsize" t)))
 
 (let ((use-default (if on-osx "open %s" "xdg-open %s")))
   (setq org-file-apps
