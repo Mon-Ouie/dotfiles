@@ -19,8 +19,9 @@
 
 (require 'org-contacts)
 
-;; Switch to gnu's HTML renderer
+;; Switch to gnus' HTML renderer
 (defun mail-shr-html2text ()
+  (interactive)
   (let ((doc (libxml-parse-xml-region (point-min) (point-max))))
     (erase-buffer)
     (shr-insert-document doc)))
