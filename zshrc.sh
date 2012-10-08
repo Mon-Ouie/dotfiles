@@ -138,7 +138,7 @@ play-stream() {
 }
 
 play-random() {
-    mplayer "$1/$(ls "$1" | sort -R | head -n 1)"
+    mplayer "$1/$(/usr/bin/ls "$1" | sort -R | head -n 1)"
 }
 
 to-android() {
