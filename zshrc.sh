@@ -114,7 +114,7 @@ alias rmpc='mpc --host=192.168.1.9'
 alias tree="tree -C"
 
 case `hostname` in
-    arch-*) alias ls='ls --color';;
+    arch-*) alias ls='ls --color=auto';;
 esac
 
 compctl -/ cd
