@@ -7,12 +7,10 @@
     (if package-name (concat package-name "." class-name)
       class-name)))
 
+(global-eclim-mode)
 (setq eclim-auto-save nil)
 
 (require 'bluej)
-
-(setq eclim-auto-save t)
-(global-eclim-mode)
 
 (require 'ac-emacs-eclim-source)
 (add-hook 'eclim-mode-hook
