@@ -14,6 +14,7 @@
       '(("" "minted" nil) ;; syntax highlighting
         ("" "mhchem" t)   ;; typesetting chemistry
         ("" "tikz" nil)   ;; Graphs (breaks reviews)
+        ("" "pgfplots" nil)
         ("" "amsmath" t)  ;; Some math symbols
         ("" "mathtools" t)
         ("" "relsize" t)))
