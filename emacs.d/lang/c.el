@@ -1,7 +1,11 @@
 (require 'cc-mode)
 
 (setq c-include-dirs
-  '("-I/usr/include"
+  '("-I."
+    "-I.."
+    "-I../src"
+    "-I../include"
+    "-I/usr/include"
     "-I/usr/include/c++/4.7.1"
     "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/"
     "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/32/"
@@ -61,7 +65,7 @@
              (unless (string= major-mode "java-mode")
                (setq ac-sources (append '(ac-source-clang) ac-sources)))))
 
-(setq ac-clang-flags `("-I." "-I.." ,@c-include-dirs))
+(setq ac-clang-flags c-include-dirs)
 
 (defun objc-wrap-brackets (&optional count)
   (interactive "*p")
@@ -76,7 +80,7 @@
 
 (require 'c-eldoc)
 (setq c-eldoc-includes
-      (concat "`pkg-config gtk+-2.0 --cflags` -I. -I.. " (c-include-dirs-string)))
+      (concat "`pkg-config gtk+-2.0 --cflags` " (c-include-dirs-string)))
 (add-hook 'c-mode-common-hook 'c-turn-on-eldoc-mode)
 
 ;; Flymake
@@ -111,10 +115,10 @@
                     "-Wno-unused-parameter"
 
                     ;; Load path
-                    ,(concat "-I" local-directory)
-                    ,(concat "-I" local-directory "/..")
-
-                    ,@c-include-dirs
+                    ,@(mapcar (lambda (s)
+                                (concat "-I" (expand-file-name (substring s 2)
+                                                               local-directory)))
+                              c-include-dirs)
 
                     ;; Input file
                     ,local-file)
