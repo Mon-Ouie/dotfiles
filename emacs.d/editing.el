@@ -126,3 +126,15 @@ makes)."
                      (mode . haskell-mode)
                      (mode . smalltalk-mode)
                      (mode . ruby-mode))))))
+
+;; grep
+
+(setq ack-default-command "ack --nogroup ")
+(defvar ack-history nil "History list for ack.")
+
+(defun ack (command)
+  (interactive
+   (list
+    (read-string "Run command: " ack-default-command ack-history
+                 ack-default-command)))
+  (compile command))
