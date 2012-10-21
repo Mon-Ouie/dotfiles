@@ -139,3 +139,8 @@
 
 (push '(".+\\.cpp$" flymake-cpp-init) flymake-allowed-file-name-masks)
 (push '(".+\\.hpp$" flymake-cpp-init) flymake-allowed-file-name-masks)
+
+;; CScope
+
+(require 'xcscope)
+(define-key c-mode-base-map (kbd "M-.") 'cscope-find-global-definition)
