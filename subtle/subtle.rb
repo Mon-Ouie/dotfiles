@@ -438,6 +438,11 @@ grab "XF86AudioMute",        "mpc volume 0"
 grab "XF86AudioRaiseVolume", "mpc volume +10"
 grab "XF86AudioLowerVolume", "mpc volume -10"
 
+grab "XF86Sleep" do
+  system "sudo pm-suspend"
+  system "sh #{ENV["HOME"]}/code/sh/on_awake.sh"
+end
+
 tag "browser",  "uzbl|opera|firefox|navigator|chromium"
 tag "test",     "test"
 
