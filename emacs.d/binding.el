@@ -86,6 +86,7 @@
 
 (require 'expand-region)
 (global-set-key (kbd "C-c C-y") 'er/expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-ù") 'mc/mark-previous-like-this)
