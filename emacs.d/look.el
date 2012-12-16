@@ -19,6 +19,7 @@
       initial-scratch-message nil)
 
 (require 'color-theme)
+(color-theme-initialize)
 (load-file (config-file "my-charcoal.el"))
 
 ;; (my-color-theme-charcoal-black)
