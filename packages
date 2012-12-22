@@ -5,7 +5,7 @@ git
 openssh
 xorg-xauth
 ruby
-ruby-doc
+ruby-docs
 jshon
 packer
 sudo
