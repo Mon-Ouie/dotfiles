@@ -12,6 +12,10 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 subtle 2>log &
 pid=$!
 
+if [ "$(mpc status|grep playing)" = "" ]
+    sh ~/code/dotfiles/reset_player.sh
+fi
+
 tmux new-session -d -s other
 
 tmux new-window -t other:2 -n "music" "TERM=screen-256color ncmpcpp"

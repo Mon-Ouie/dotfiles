@@ -104,14 +104,6 @@ rescue SystemCallError => e
   puts "could not set wallpaper: #{e}"
 end
 
-begin
-  unless `mpc status` =~ /playing/
-    system "sh ~/code/dotfiles/reset_player.sh"
-  end
-rescue SystemCallError => e
-  puts "warning: #{e}"
-end
-
 #
 # == Styles
 #
