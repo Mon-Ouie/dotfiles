@@ -12,7 +12,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 subtle 2>log &
 pid=$!
 
-if [ "$(mpc status|grep playing)" = "" ]
+if [ "$(mpc status|grep playing)" = "" ]; then
     sh ~/code/dotfiles/reset_player.sh
 fi
 
