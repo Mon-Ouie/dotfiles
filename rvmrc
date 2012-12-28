@@ -1,3 +1,4 @@
 export rvm_path="$HOME/.rvm"
 export NOEXEC=0
 rvm_project_rvmrc=0
+export rvm_ignore_gemrc_issues=1
