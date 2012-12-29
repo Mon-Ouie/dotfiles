@@ -66,13 +66,6 @@
 (global-set-key (kbd "C-c s") 'dictionary-list)
 (global-set-key (kbd "C-c d") 'dictionary-def)
 
-(defun pry ()
-  (interactive)
-  (comint-run (executable-find "pry")))
-
-(global-set-key (kbd "s-i") 'pry)
-(global-set-key (kbd "C-c I") 'pry)
-
 (global-set-key [f6] 'poem)
 (global-set-key [f7] 'doc)
 
