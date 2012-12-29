@@ -16,11 +16,6 @@ if [ "$(mpc status|grep playing)" = "" ]; then
     sh ~/code/dotfiles/reset_player.sh
 fi
 
-# tmux new-session -d -s other
-
-# tmux new-window -t other:2 -n "music" "TERM=screen-256color ncmpcpp"
-# tmux new-window -t other:3 -n "htop" "TERM=screen-256color htop"
-
 tmux new -d -s other -n "music" "TERM=screen-256color ncmpcpp"
 tmux new-window -t other:2 -n "stats" "TERM=screen-256color htop"
 
