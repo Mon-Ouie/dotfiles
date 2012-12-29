@@ -5,7 +5,7 @@ create_irc_session () {
     tmux attach -t irc
 }
 
-if [ `tmux has-session -t irc` ]; then
+if [ `tmux has-session -t irc 2>/dev/null` ]; then
     tmux attach -t irc
 else
     case `hostname` in
