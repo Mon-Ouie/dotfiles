@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 
 create_irc_session () {
-    tmux new-session -d -s irc
-    tmux new-window -t irc:2 -n "irc" "TERM=screen-256color weechat-curses"
+    tmux new -d -s irc -n "irc" "TERM=screen-256color weechat-curses"
     tmux attach -t irc
 }
 
