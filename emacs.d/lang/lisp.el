@@ -2,7 +2,7 @@
 
 (require 'slime-autoloads)
 (slime-setup '(slime-fancy slime-indentation slime-package-fu
-               slime-fontifying-fu))
+               slime-fontifying-fu slime-highlight-edits))
 
 (add-hook 'sldb-mode-hook
           #'(lambda ()
