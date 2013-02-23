@@ -15,7 +15,7 @@
               (call-process "texcount" nil t nil "-0" enc-opt this-file)))))
       (message word-count)))
 
-  (define-key LaTeX-mode-map "\C-cw" 'latex-word-count))
+  (define-key latex-mode-map "\C-cw" 'latex-word-count))
 
 (autoload 'flyspell-babel-setup "flyspell-babel")
 
