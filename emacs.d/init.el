@@ -16,7 +16,7 @@
   (when (and (file-exists-p dir)
 	     (file-directory-p dir))
     (dolist (elem (directory-files dir))
-      (unless (string-match-p "^\\.\\.?$" elem) ;; Ignore . and ..
+      (unless (or (equal "." elem) (equal ".." elem))
 	(let ((filename (concat dir elem)))
 	  (if (file-directory-p filename)
 	      (add-to-list 'load-path filename)))))))
