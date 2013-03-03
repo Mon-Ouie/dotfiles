@@ -22,8 +22,8 @@
 (color-theme-initialize)
 (load-file (config-file "my-charcoal.el"))
 
-;; (my-color-theme-charcoal-black)
-(color-theme-clarity)
+(my-color-theme-charcoal-black)
+;; (color-theme-clarity)
 
 (require 'magit)
 (set-face-foreground 'magit-diff-add "green")
