@@ -118,3 +118,9 @@
 
 (when on-osx
   (map-meta-to-default))
+
+;; Capital U for public to avoid accidentally making public something I don't
+;; want.
+(require 'gist-paste)
+(global-set-key (kbd "C-c C-u") 'gist-region-or-buffer-private-paste)
+(global-set-key (kbd "C-c C-U") 'gist-region-or-buffer-paste)

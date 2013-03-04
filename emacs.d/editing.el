@@ -138,3 +138,7 @@ makes)."
     (read-string "Run command: " ack-default-command ack-history
                  ack-default-command)))
   (compile command))
+
+;; pcache, for gists
+(require 'pcache)
+(setq pcache-directory (config-dir ".var/pcache"))
