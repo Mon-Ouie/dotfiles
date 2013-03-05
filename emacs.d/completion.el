@@ -9,6 +9,7 @@
     (unless (minibufferp (current-buffer))
       (auto-complete-mode t))))
 
+(ac-linum-workaround)
 (ac-global-auto-complete-mode t)
 
 (setq-default ac-sources
