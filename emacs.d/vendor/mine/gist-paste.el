@@ -4,6 +4,7 @@
 
 (defun gist-paste-callback (gist)
   (let ((url (oref gist :html-url)))
+    (pop-mark)
     (cond
      ((fboundp 'x-set-selection) (x-set-selection 'primary url))))
   (gist-created-callback gist))
