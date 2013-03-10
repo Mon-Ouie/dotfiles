@@ -4,5 +4,3 @@ remove Control = Control_L
 keysym Control_L = Caps_Lock
 keysym Caps_Lock = Control_L
 add Control = Control_L
-
-keysym Print = Undo Redo
