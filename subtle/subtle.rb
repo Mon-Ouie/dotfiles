@@ -435,6 +435,8 @@ grab "XF86Sleep" do
   system "sh #{ENV["HOME"]}/code/sh/on_awake.sh"
 end
 
+grab "Print", "scrot -e 'mv $f ~/picture/'"
+
 tag "browser",  "uzbl|opera|firefox|navigator|chromium"
 tag "test",     "test"
 
