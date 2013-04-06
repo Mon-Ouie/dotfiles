@@ -30,7 +30,7 @@ else
     export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 fi
 
-export PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin" # using system ruby if it's 1.9
+export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
 export PATH="$PATH:/usr/bin/vendor_perl"
 
 export CFLAGS="-I/usr/local/include"
