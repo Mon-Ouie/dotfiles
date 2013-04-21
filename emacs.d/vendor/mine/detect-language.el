@@ -153,7 +153,7 @@ the total amonut of words that have been seen."
       table))
 
 (defun detect-language-max-by (func list)
-  "Returns the value in a list for which a certain function returns the smallest
+  "Returns the value in a list for which a certain function returns the greatest
 value."
   (let ((acc-val (funcall func (first list))))
     (reduce #'(lambda (acc el)
@@ -171,7 +171,7 @@ if the score is null for all known languages."
     (let ((best-lang
            (detect-language-max-by #'(lambda (l) (gethash l scores)) langs)))
       (if (zerop (gethash best-lang scores)) nil
-        best-lang))))
+        best-langp))))
 
 (defun detect-language ()
   "Attempts to detect the language of the current buffer and change ispell
