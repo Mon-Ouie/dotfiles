@@ -8,4 +8,4 @@
 (add-hook 'message-mode-hook '(lambda () (footnote-mode t)))
 
 (add-hook 'message-mode-hook 'turn-on-flyspell)
-(add-hook 'message-mode-hook 'detect-language)
+(add-hook 'message-mode-hook 'detect-language-per-paragraph)

@@ -2,6 +2,7 @@
 
 (require 'cl)
 (require 'ispell)
+(require 'ispell-multi)
 
 (defvar detect-language-languages (make-hash-table :test 'equal)
   "Map that matches a language name to a word-frequency table.")
@@ -178,5 +179,19 @@ dictionnary appropirately."
   (interactive)
   (let ((lang (detect-language-for (buffer-string))))
     (when lang (ispell-change-dictionary lang))))
+
+(defun detect-language-for-paragraph ()
+  "Detects the language of a given paragraph."
+  (let ((lang (detect-language-for (thing-at-point 'paragraph)))
+        (paragraph (bounds-of-thing-at-point 'paragraph)))
+    (add-text-properties (car paragraph) (cdr paragraph)
+                         (list 'ispell-multi-lang lang
+                               'rear-nonsticky t))))
+
+(defun detect-language-per-paragraph ()
+  "Enables detection of the language on a per-paragraph basis."
+  (interactive)
+  (setq flyspell-generic-check-word-predicate 'ispell-multi-verify)
+  (setq ispell-multi-nil-callback 'detect-language-for-paragraph))
 
 (provide 'detect-language)

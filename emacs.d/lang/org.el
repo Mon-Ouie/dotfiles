@@ -3,7 +3,7 @@
 
 (add-hook 'org-mode-hook '(lambda () (auto-fill-mode t)))
 (add-hook 'org-mode-hook 'turn-on-flyspell)
-(add-hook 'org-mode-hook 'detect-language)
+(add-hook 'org-mode-hook 'detect-language-per-paragraph)
 
 (setq org-src-fontify-natively t)
 (setq org-hide-leading-stars t)
