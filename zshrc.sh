@@ -103,6 +103,9 @@ else
   start_agent;
 fi
 
+# Bind some program to certain file types
+alias -s jar='java -jar'
+
 #alias ls='ls --color=auto -F'
 alias grep='grep --color=auto'
 alias f='find . | grep'
