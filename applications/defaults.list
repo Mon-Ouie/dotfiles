@@ -1,5 +1,5 @@
 [Default Applications]
-application/pdf=epdfview.desktop
+application/pdf=zathura.desktop
 image/jpeg=feh.desktop
 image/png=feh.desktop
 image/gif=feh.desktop
