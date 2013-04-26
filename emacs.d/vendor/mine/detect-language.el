@@ -171,7 +171,7 @@ if the score is null for all known languages."
     (let ((best-lang
            (detect-language-max-by #'(lambda (l) (gethash l scores)) langs)))
       (if (zerop (gethash best-lang scores)) nil
-        best-langp))))
+        best-lang))))
 
 (defun detect-language ()
   "Attempts to detect the language of the current buffer and change ispell
