@@ -185,12 +185,13 @@ dictionnary appropirately."
   (let ((lang (detect-language-for (thing-at-point 'paragraph)))
         (paragraph (bounds-of-thing-at-point 'paragraph)))
     (add-text-properties (car paragraph) (cdr paragraph)
-                         (list 'ispell-multi-lang lang
-                               'rear-nonsticky t))))
+                         (list 'ispell-multi-lang lang))))
 
 (defun detect-language-per-paragraph ()
   "Enables detection of the language on a per-paragraph basis."
   (interactive)
+  (add-to-list (make-local-variable 'text-property-default-nonsticky)
+               '(ispell-multi-lang . t))
   (setq flyspell-generic-check-word-predicate 'ispell-multi-verify)
   (setq ispell-multi-nil-callback 'detect-language-for-paragraph))
 
