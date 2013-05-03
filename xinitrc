@@ -19,8 +19,8 @@ fi
 tmux new -d -s other -n "music" "TERM=screen-256color ncmpcpp"
 tmux new-window -t other:2 -n "stats" "TERM=screen-256color htop"
 
-urxvt -name irc_term -e zsh -c "sh ~/code/dotfiles/weechat.sh" &
-urxvt -name urxvt_other -e "tmux attach -t other" &
+urxvt -name irc_term -e /bin/bash -c "sh ~/code/dotfiles/weechat.sh" &
+urxvt -name urxvt_other -e /bin/bash -i -c "tmux attach -t other" &
 
 firefox &
 emacs &
