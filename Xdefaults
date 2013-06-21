@@ -13,15 +13,15 @@ xterm*toolBar:           false
 
 urxvt*depth:             32
 
-urxvt*background:        rgba:0000/0000/0000/9fff
-urxvt2*background:       rgba:0000/0000/0000/9fff
-urxvt1*background:       rgba:0000/0000/0000/9fff
+urxvt*background:        rgba:0000/0000/0000/ffff
+urxvt2*background:       rgba:0000/0000/0000/ffff
+urxvt1*background:       rgba:0000/0000/0000/ffff
 
-!urxvt*background:        rgba:9a00/9a00/9a00/9fff
-!urxvt2*background:       rgba:9a00/9a00/9a00/9fff
-!urxvt1*background:       rgba:9a00/9a00/9a00/9fff
+!urxvt*background:        rgba:9a00/9a00/9a00/ffff
+!urxvt2*background:       rgba:9a00/9a00/9a00/ffff
+!urxvt1*background:       rgba:9a00/9a00/9a00/ffff
 
-URxvt.background:        rgba:0000/0000/0000/9fff
+URxvt.background:        rgba:0000/0000/0000/ffff
 
 !absolute path needed
 URxvt.perl-lib:        /home/kilian/code/dotfiles/urxvt
@@ -53,7 +53,7 @@ URxvt.urgentOnBell:      true
 URxvt.visualBell:        true
 
 !!! Light theme
-!*background:             rgba:9a00/9a00/9a00/9fff
+!*background:             rgba:9a00/9a00/9a00/ffff
 !*foreground:             #000000
 
 ! Black
@@ -90,57 +90,57 @@ URxvt.visualBell:        true
 
 !!! Black theme
 
-*foreground:             #ffffff
+! *foreground:             #ffffff
 
-*color0:  #3b3b3b
-*color1:  #ff6b6b
-*color2:  #a3d46e
-*color3:  #eaca75
-*color4:  #435e87
-*color5:  #cf8243
-*color6:  #789ec6
-*color7:  #ffffff
-*color8:  #555753
-*color9:  #ff8d8d
-*color10: #c8e7a8
-*color11: #ffd155
-*color12: #587aa4
-*color13: #f6a24f
-*color14: #46a4ff
-*color15: #ffffff
+! *color0:  #3b3b3b
+! *color1:  #ff6b6b
+! *color2:  #a3d46e
+! *color3:  #eaca75
+! *color4:  #435e87
+! *color5:  #cf8243
+! *color6:  #789ec6
+! *color7:  #ffffff
+! *color8:  #555753
+! *color9:  #ff8d8d
+! *color10: #c8e7a8
+! *color11: #ffd155
+! *color12: #587aa4
+! *color13: #f6a24f
+! *color14: #46a4ff
+! *color15: #ffffff
 
 !!! Black theme 2
 
-! *foreground: #7F7F7F
-! *background: #000000
-! !black
-! *color0:     #3b3b3b
-! *color8:     #555753
-! !red
-! *color1:     #ff6b6b
-! *color9:     #ff8d8d
-! !green
-! *color2:     #a3d46e
-! *color10:    #c8e7a8
-! !yellow
-! *color3:     #eaca75
-! *color11:    #ffd155
-! !blue
-! *color4:     #435e87
-! *color12:    #587aa4
-! !magenta
-! *color5:     #cf8243
-! *color13:    #f6a24f
-! !cyan
-! *color6:     #789ec6
-! *color14:    #46a4ff
-! !white
-! *color7:     #7F7F7F
-! *color15:    #7F7F7F
+*foreground: #7F7F7F
+*background: #000000
+!black
+*color0:     #3b3b3b
+*color8:     #555753
+!red
+*color1:     #ff6b6b
+*color9:     #ff8d8d
+!green
+*color2:     #a3d46e
+*color10:    #c8e7a8
+!yellow
+*color3:     #eaca75
+*color11:    #ffd155
+!blue
+*color4:     #435e87
+*color12:    #587aa4
+!magenta
+*color5:     #cf8243
+*color13:    #f6a24f
+!cyan
+*color6:     #789ec6
+*color14:    #46a4ff
+!white
+*color7:     #7F7F7F
+*color15:    #7F7F7F
 
 !!! Light theme
 
-!*background:             rgba:9a00/9a00/9a00/9fff
+!*background:             rgba:9a00/9a00/9a00/ffff
 !*foreground:             #000000
 
 ! Black
