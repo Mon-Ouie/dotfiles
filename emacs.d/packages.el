@@ -3,7 +3,7 @@
 (require 'package)
 
 (setq package-archives
-      '(("marmelade" . "http://marmalade-repo.org/packages/")
+      '(("marmalade" . "http://marmalade-repo.org/packages/")
         ("tromey" . "http://tromey.com/elpa/")
         ("gnu" . "http://elpa.gnu.org/packages/")))
 
