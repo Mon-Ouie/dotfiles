@@ -74,6 +74,9 @@
         (:name eclim :type git
                :url "git://github.com/senny/emacs-eclim.git")
         (:name rainbow-mode :type elpa)
-        (:name gist)))
+        (:name gist)
+        (:name helm)
+        (:name helm-ls-git :type git
+               :url "git://github.com/emacs-helm/helm-ls-git.git")))
 
 (el-get 'sync)

@@ -24,6 +24,34 @@
 (global-set-key (kbd "<backtab> <tab>") 'yas/expand-temp-snippet)
 (global-set-key (kbd "<backtab> s") 'yas/save-temp-snippet)
 
+(defun my-helm ()
+  (interactive)
+  (require 'helm-files)
+  (require 'helm-eval)
+  (require 'helm-imenu)
+  (require 'helm-info)
+  (require 'helm-man)
+  (require 'helm-misc)
+  (require 'helm-org)
+  (require 'helm-ls-git)
+  (helm-other-buffer `(helm-source-buffers-list
+                       helm-source-ls-git
+                       helm-source-recentf
+                       helm-source-occur
+                       helm-source-google-suggest
+                       ,(if (eq major-mode 'org-mode)
+                            'helm-source-org-headline
+                          'helm-source-imenu)
+                       helm-source-info-emacs
+                       helm-source-info-elisp
+                       helm-source-man-pages
+                       helm-source-fixme
+                       helm-source-buffer-not-found
+                       helm-source-evaluation-result)
+                     "*helm*"))
+
+(global-set-key (kbd "C-c h") 'my-helm)
+
 (defun indent-buffer ()
   (interactive)
   (indent-region (point-min) (point-max)))
