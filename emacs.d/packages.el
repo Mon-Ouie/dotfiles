@@ -35,6 +35,7 @@
                :url "http://nschum.de/src/emacs/fringe-helper/fringe-helper.el"
                :features fringe-helper
                :compile "fring-helper.el")
+        (:name flymake)
         (:name flymake-point)
         (:name flymake-fringe-icons
                :description "Add icons in the fringe, for flymake"

@@ -38,6 +38,12 @@
 (set-face-background 'magit-diff-file-header "#222222")
 (set-face-foreground 'magit-diff-file-header "#bfbfbf")
 
+(set-face-background 'flymake-errline "#ff6b6b")
+(set-face-foreground 'flymake-errline "white")
+
+(set-face-background 'flymake-warnline "#cf8243")
+(set-face-foreground 'flymake-warnline "white")
+
 (require 'linum)
 (set-face-foreground 'linum "#7f7f7f")
 
