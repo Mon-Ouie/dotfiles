@@ -13,11 +13,11 @@
 (ac-global-auto-complete-mode t)
 
 (setq-default ac-sources
-              '(ac-source-abbrev
+              '(ac-source-yasnippet
+                ac-source-abbrev
                 ac-source-dictionary
                 ac-source-words-in-same-mode-buffers
-                ac-source-words-in-buffer
-                ac-source-yasnippet))
+                ac-source-words-in-buffer))
 
 (setq ac-ignore-case t)
 
