@@ -30,6 +30,8 @@ else
     export PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 fi
 
+export PATH="$PATH:$HOME/prog"
+
 export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
 export PATH="$PATH:/usr/bin/vendor_perl"
 
