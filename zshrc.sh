@@ -183,6 +183,11 @@ sync-file () {
     rsync -avuP "$to"   "$from" || return 1
 }
 
+# Actually works with a few other websites.
+yt() {
+    mplayer $(youtube-dl -g "$1")
+}
+
 # Dear websites,
 # Just because I use wget to download one of your files doesn't mean that I'm a robot.
 wget-human() {
