@@ -24,7 +24,13 @@
                               ac-source-variables)
                             ac-sources))))
 
-(dolist (hook '(lisp-mode-hook emacs-lisp-mode-hook))
+;; Clojure
+;; (remove-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+;; (remove-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+
+(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
+
+(dolist (hook '(lisp-mode-hook emacs-lisp-mode-hook clojure-mode-hook))
   (add-hook hook 'turn-on-auto-fill)
   (add-hook hook 'rainbow-mode)
   (add-hook hook

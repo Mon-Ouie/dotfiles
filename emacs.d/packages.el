@@ -23,7 +23,12 @@
         (:name rhtml-mode)
         (:name pkgbuild-mode)
         (:name zencoding-mode)
+
         (:name slime)
+
+        (:name nrepl)
+        (:name nrepl-ac)
+        (:name clojure-mode)
 
         (:name yari)
         (:name auctex)
