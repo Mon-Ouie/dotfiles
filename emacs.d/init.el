@@ -24,6 +24,7 @@
 (add-vendor-directory (config-dir "vendor"))
 (add-vendor-directory (config-dir "el-get"))
 (add-vendor-directory "/usr/local/share/emacs/site-lisp/")
+(add-to-list 'load-path "/usr/local/share/elisp")
 
 (load-file (config-file "env.el"))
 (load-file (config-file "packages.el"))
