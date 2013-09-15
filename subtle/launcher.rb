@@ -2,7 +2,7 @@
 #
 # @file Launcher
 #
-# @copyright (c) 2010-2012, Christoph Kappel <unexist@dorfelite.net>
+# @copyright (c) 2010-2013, Christoph Kappel <unexist@subforge.org>
 # @version $Id$
 #
 # This program can be distributed under the terms of the GNU GPLv2.
@@ -32,6 +32,7 @@
 # Keys:
 #
 # Up/Down               - Cycle through history (per runtime)
+# Left/Right            - Move text cursor
 # ESC                   - 1) Hide/exit launcher 2) stop reverse history search
 # Enter                 - Run command
 # ^R                    - Reverse history search
@@ -51,8 +52,8 @@ end
 
 # Check for subtlext version
 major, minor, teeny = Subtlext::VERSION.split('.').map(&:to_i)
-if major == 0 and minor == 10 and 3203 > teeny
-  puts ">>> ERROR: launcher needs at least subtle `0.10.3203' (found: %s)" % [
+if major == 0 and minor == 10 and 3238 > teeny
+  puts ">>> ERROR: launcher needs at least subtle `0.10.3238' (found: %s)" % [
     Subtlext::VERSION
    ]
   exit
@@ -149,9 +150,10 @@ module Subtle # {{{
         @height    = 0
         @completed = nil
         @reverse   = nil
+        @input_pos = 0
 
         # Buffer
-        @buf_input = ''
+        @input_buf = ''
         @buf_info  = ''
 
         # Parsed data
@@ -164,7 +166,7 @@ module Subtle # {{{
         @cached_tags    = Subtlext::Tag.all.map(&:name)
         @cached_views   = Subtlext::View.all.map(&:name)
         @cached_apps    = {}
-        @cached_history = []
+        @cached_history = [ ]
 
         # FIXME: Find config instance
         if defined?(Subtle::Config)
@@ -259,9 +261,17 @@ module Subtle # {{{
         # Handle keys
         case key
           when :up, :down # {{{
-            idx        = (@cached_history.index(@buf_input) +
+            idx        = (@cached_history.index(@input_buf) +
               (:up == key ? -1 : 1)) rescue -1
-            @buf_input = @cached_history[idx] || "" # }}}
+            @input_buf = @cached_history[idx] || "" # }}}
+            @input_pos = @input_buf.size
+          when :left # {{{
+            @input_pos -= 1 if 0 < @input_pos # }}}
+          when :right # {{{
+            if (@reverse and @input_pos < @reverse.size) or
+                @input_pos < @input_buf.size
+              @input_pos += 1 
+           end # }}}
           when :tab # {{{
             complete # }}}
           when :escape # {{{
@@ -269,7 +279,7 @@ module Subtle # {{{
             if @reverse
               @reverse = nil
             else
-              @buf_input = ""
+              @input_buf = ""
               @buf_info  = ""
               @reverse   = nil
               @candidate = nil
@@ -278,34 +288,62 @@ module Subtle # {{{
           when :backspace # {{{
             if @reverse
               @reverse.chop!
+              buf      = @reverse
+              chopped  = @reverse.slice(0, @input_pos).chop!
+              @reverse = chopped unless chopped.nil?
+
+              if (@input_pos - 1) < buf.size
+                slice = buf.slice(@input_pos..-1)
+                @reverse += slice unless slice.nil?
+              end
 
               reverse_complete
             else
-              @buf_input.chop!
-            end # }}}
+              buf        = @input_buf
+              slice      = @input_buf.slice(0, @input_pos)
+              @input_buf = slice.chop unless slice.nil?
+
+              if (@input_pos - 1) < buf.size
+                slice = buf.slice(@input_pos..-1)
+                @input_buf += slice unless slice.nil?
+              end
+            end
+
+            @input_pos -= 1 if 0 < @input_pos# }}}
           when :space # {{{
-            @buf_input << " " # }}}
+            @input_buf << " "
+            @input_pos += 1 # }}}
           when :return # {{{
-            @cached_history << @buf_input
-            @buf_input      =  ""
+            @cached_history << @input_buf
+            @input_buf      =  ""
             @buf_info       =  ""
             @reverse        =  nil
             ret             =  false # }}}
           when CTRL_R # {{{
             if mods.is_a?(Array) and mods.include?(:control)
-              @reverse = ""
+              @reverse   = ""
+              @input_pos = 0
 
               reverse_complete
             else
-              @buf_input << key.to_s
-            end
-          else
+              @input_buf << key.to_s
+            end # }}}
+          else # {{{
             if @reverse
               @reverse << key.to_s
 
               reverse_complete
             else
-              @buf_input << key.to_s
+              if @input_pos < @input_buf.size - 1
+                slice1 = @input_buf.slice(0, @input_pos)
+                slice2 = @input_buf.slice(@input_pos..-1)
+
+                @input_buf = (slice1 || "") + key.to_s + (slice2 || "")
+              else
+                @input_buf << key.to_s
+              end
+
+              @input_pos += 1
             end # }}}
         end
 
@@ -324,7 +362,13 @@ module Subtle # {{{
       def redraw
         # Fill input window
         @input.clear
-        @input.draw_text(3, @font_y1 + 3, @buf_input) unless @buf_input.empty?
+
+        # Add underscore
+        slice1 = @input_buf.slice(0, @input_pos)
+        slice2 = @input_buf.slice(@input_pos..-1)
+
+        @input.draw_text(3, @font_y1 + 3,
+          (slice1 || "") + "_" + (slice2 || ""))
 
         # Assemble info string
         str =  @buf_info.empty? ? 'Ready..' : @buf_info
@@ -401,7 +445,7 @@ module Subtle # {{{
             end
 
             # Spawn app, tag it and set modes
-            unless (client = Subtlext::Subtle.spawn(@parsed_app)).nil?
+            unless (client = Subtlext::Client.spawn(@parsed_app)).nil?
               client.tags  = @parsed_tags unless @parsed_tags.empty?
 
               # Set modes
@@ -440,7 +484,8 @@ module Subtle # {{{
         # Handle reverse search
         if @reverse and not @reverse.empty? and @cached_history.any?
           matches    = @cached_history.reverse.select { |h| h =~ /#{@reverse}/ }
-          @buf_input = matches.first || ""
+          @input_buf = matches.first || ""
+          @input_pos = @input_buf.size
         end
       end # }}}
 
@@ -449,13 +494,13 @@ module Subtle # {{{
         lookup = nil
 
         # Clear info field
-        if @buf_input.empty? or @buf_input.nil?
+        if @input_buf.empty? or @input_buf.nil?
           redraw
           return
         end
 
         # Store curret buffer
-        @completed = @buf_input if @completed.nil?
+        @completed = @input_buf if @completed.nil?
 
         # Select lookup cache
         last = @completed.split(' ').last rescue @completed
@@ -491,11 +536,12 @@ module Subtle # {{{
           guesses.sort! { |a, b| a[1] <=> b[1] }
           guesses.map! { |a| a.first }
 
-          last = @buf_input.split(' ').last rescue @buf_input
+          last = @input_buf.split(' ').last rescue @input_buf
           idx  = (guesses.index(last) + 1) % guesses.size rescue 0
 
-          @candidate = guesses[idx]
-          @buf_input.gsub!(/#{last}$/, guesses[idx])
+          @candidate  = guesses[idx]
+          @input_pos += guesses[idx].size
+          @input_buf.gsub!(/#{last}$/, guesses[idx])
 
           # Convert to symbol if methods are guessed
           @candidate = @candidate.delete(':').to_sym if ':' == prefix
@@ -506,20 +552,20 @@ module Subtle # {{{
 
       def parse # {{{
         # Handle input
-        unless @buf_input.empty? or @buf_input.nil?
-          if RE_URI.match(@buf_input)
-            @candidate = URI.parse(@buf_input)
+        unless @input_buf.empty? or @input_buf.nil?
+          if RE_URI.match(@input_buf)
+            @candidate = URI.parse(@input_buf)
             @buf_info  = 'Goto %s' % [ @candidate.to_s ]
-          elsif RE_SEARCH.match(@buf_input)
+          elsif RE_SEARCH.match(@input_buf)
             @candidate = URI.parse(
               'http://www.google.com/#q=%s' % [ URI.escape($1) ]
             )
             @buf_info  = 'Goto %s' % [ @candidate.to_s ]
-          elsif RE_METHOD.match(@buf_input)
+          elsif RE_METHOD.match(@input_buf)
             @candidate = $1.to_sym
             @buf_info  = 'Call :%s' % [ @candidate ]
-          elsif RE_COMMAND.match(@buf_input)
-            @candidate    = @buf_input
+          elsif RE_COMMAND.match(@input_buf)
+            @candidate    = @input_buf
             @parsed_tags  = []
             @parsed_views = []
             @parsed_app   = ''
