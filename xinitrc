@@ -4,7 +4,9 @@ setxkbmap fr bepo
 xmodmap ~/.Xmodmap
 
 # xrandr -s 1920x1080
-xcompmgr &
+# xcompmgr &
+
+devmon -g &
 
 # For QGtkStyle
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
