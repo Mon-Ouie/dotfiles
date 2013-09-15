@@ -23,7 +23,7 @@ backup_dir() {
 mkdir -p ~/.zsh/
 mkdir -p ~/.config/
 mkdir -p ~/.config/htop
-mkdir -p ~/.ncmcpp/
+mkdir -p ~/.ncmpcpp/
 mkdir -p ~/.local/share/applications/
 
 backup_file irbrc.rb      ~/.irbrc
