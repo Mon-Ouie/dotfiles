@@ -8,8 +8,7 @@
         ("gnu" . "http://elpa.gnu.org/packages/")))
 
 (setq el-get-sources
-      `((:name ruby-end)
-        (:name ruby-dev :type git
+      `((:name ruby-dev :type git
                :url "https://github.com/Mon-Ouie/ruby-dev.el.git")
 
         (:name yaml-mode)
@@ -24,15 +23,25 @@
         (:name pkgbuild-mode)
         (:name zencoding-mode)
 
-        (:name slime)
+	(:name slime
+	       :description "Superior Lisp Interaction Mode for Emacs"
+	       :type github
+	       :autoloads "slime-autoloads"
+	       :pkgname "nablaone/slime"
+	       :load-path ("." "contrib")
+	       :compile (".")
+	       :post-init (slime-setup))
 
         (:name nrepl)
-        (:name nrepl-ac)
+        (:name nrepl-ac :type git
+	       :url "https://github.com/clojure-emacs/ac-nrepl.git")
         (:name clojure-mode)
 
         (:name yari)
         (:name auctex)
-        (:name magit)
+	(:name git-modes)
+        (:name magit :type git
+	       :url "https://github.com/magit/magit.git")
 
         (:name popup :type elpa)
         (:name fringe-helper
@@ -57,8 +66,7 @@
 
         (:name color-theme)
 
-        (:name autopair)
-        (:name paredit) ; plays better with slime for lisp
+        (:name smartparens)
         (:name yasnippet :type elpa)
 
         (:name auto-complete :type elpa)
