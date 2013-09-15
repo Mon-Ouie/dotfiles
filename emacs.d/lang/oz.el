@@ -15,3 +15,21 @@
 (define-key oz-mode-map (kbd "C-c C-l") 'oz-feed-line)
 (define-key oz-mode-map (kbd "C-C C-b") 'oz-feed-buffer)
 (define-key oz-mode-map (kbd "C-c C-r") 'oz-feed-region)
+
+;; Alignment rules
+
+(require 'align)
+
+(add-to-list 'align-rules-list
+             '(oz-then
+               (regexp  . "\\(\\s-+\\)then")
+               (modes   . '(oz-mode))))
+
+(add-to-list 'align-rules-list
+             '(oz-if-elseif-else
+               (regexp . "\\b\\(?:if\\|elseif\\|else\\)\\b\\(\\s-+\\)[^\\s]")
+               (modes  . '(oz-modes))))
+
+(add-to-list 'align-dq-string-modes    'oz-mode)
+(add-to-list 'align-sq-string-modes    'oz-mode)
+(add-to-list 'align-open-comment-modes 'oz-mode)

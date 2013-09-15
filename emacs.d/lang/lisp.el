@@ -4,11 +4,6 @@
 (slime-setup '(slime-fancy slime-indentation slime-package-fu
                slime-fontifying-fu slime-highlight-edits))
 
-(add-hook 'sldb-mode-hook
-          #'(lambda ()
-              (setq autopair-dont-activate t)
-              (autopair-mode -1)))
-
 (add-hook 'lisp-mode-hook
           #'(lambda ()
               (push 'ac-source-slime ac-sources)))
@@ -25,17 +20,13 @@
                             ac-sources))))
 
 ;; Clojure
-;; (remove-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-;; (remove-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
 
 (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
 
 (dolist (hook '(lisp-mode-hook emacs-lisp-mode-hook clojure-mode-hook))
   (add-hook hook 'turn-on-auto-fill)
-  (add-hook hook 'rainbow-mode)
-  (add-hook hook
-            #'(lambda ()
-                (autopair-mode -1)
-                (paredit-mode 1))))
+  (add-hook hook 'rainbow-mode))
 
 (require 'ielm) ;; REPL for elisp

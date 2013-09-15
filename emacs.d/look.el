@@ -9,7 +9,6 @@
   (add-to-list 'default-frame-alist
                (list 'alpha opacity opacity)))
 
-(show-paren-mode t)
 (column-number-mode t)
 
 (setq display-time-format "%H:%M")

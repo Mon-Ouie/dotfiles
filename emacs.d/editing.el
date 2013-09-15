@@ -30,8 +30,30 @@
 
 (require 'dired+)
 
-(require 'autopair)
-(autopair-global-mode t)
+(require 'smartparens-config)
+(require 'smartparens-ruby)
+(require 'smartparens-lua)
+(require 'smartparens-latex)
+(require 'smartparens-oz)
+
+(smartparens-global-mode t)
+(show-smartparens-global-mode t)
+
+(setq sp-show-pair-from-inside t)
+
+(setq sp-base-key-bindings 'paredit)
+(sp-use-paredit-bindings)
+(define-key smartparens-mode-map (kbd "C-M-b") 'sp-backward-sexp)
+(define-key smartparens-mode-map (kbd "C-M-a") 'sp-backward-down-sexp)
+(define-key smartparens-mode-map (kbd "C-S-d") 'sp-beginning-of-sexp)
+(define-key smartparens-mode-map (kbd "C-S-a") 'sp-end-of-sexp)
+(define-key smartparens-mode-map (kbd "C-M-e") 'sp-up-sexp)
+(define-key smartparens-mode-map (kbd "C-M-e") 'sp-backward-up-sexp)
+(define-key smartparens-mode-map (kbd "C-M-k") 'sp-kill-sexp)
+(define-key smartparens-mode-map (kbd "C-M-w") 'sp-copy-sexp)
+(define-key smartparens-mode-map (kbd "C-M-t") 'sp-transpose-sexp)
+(define-key smartparens-mode-map (kbd "C-»") 'sp-select-next-thing-exchange)
+(define-key smartparens-mode-map (kbd "C-M-»") 'sp-select-next-thing)
 
 (require 'linum)
 (global-linum-mode t)
