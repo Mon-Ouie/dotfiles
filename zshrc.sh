@@ -194,6 +194,10 @@ wget-human() {
     wget -U "Totally a human" $*
 }
 
+show-date() {
+    ruby -rtime -e 'puts Time.parse(ARGV.join "").strftime("%A %d %B %Y, %H:%M")' -- $*
+}
+
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
