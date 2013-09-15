@@ -31,7 +31,7 @@
 (require 'dired+)
 
 (require 'smartparens-config)
-(require 'smartparens-ruby)
+(require 'my-smartparens-ruby)
 (require 'smartparens-lua)
 (require 'smartparens-latex)
 (require 'smartparens-oz)
