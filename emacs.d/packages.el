@@ -38,7 +38,6 @@
         (:name clojure-mode)
 
         (:name yari)
-        (:name auctex)
 	(:name git-modes)
         (:name magit :type git
 	       :url "https://github.com/magit/magit.git")
