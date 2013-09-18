@@ -46,6 +46,9 @@
 (require 'linum)
 (set-face-foreground 'linum "#7f7f7f")
 
+(require 'smartparens)
+(set-face-background 'sp-show-pair-match-face "#434E97")
+
 ;; Colors in compile-mode
 (require 'ansi-color)
 
