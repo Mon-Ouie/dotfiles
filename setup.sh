@@ -22,7 +22,6 @@ backup_dir() {
 
 mkdir -p ~/.zsh/
 mkdir -p ~/.config/
-mkdir -p ~/.config/htop
 mkdir -p ~/.ncmpcpp/
 mkdir -p ~/.local/share/applications/
 
@@ -46,7 +45,6 @@ backup_file XCompose      ~/.XCompose
 backup_file Xmodmap       ~/.Xmodmap
 backup_file xinitrc       ~/.xinitrc
 backup_file tmux.conf     ~/.tmux.conf
-backup_file htoprc        ~/.config/htop/htoprc
 
 backup_file applications/defaults.list \
     ~/.local/share/applications/defaults.list
