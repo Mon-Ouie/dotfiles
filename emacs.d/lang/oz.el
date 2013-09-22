@@ -27,8 +27,8 @@
 
 (add-to-list 'align-rules-list
              '(oz-if-elseif-else
-               (regexp . "\\b\\(?:if\\|elseif\\|else\\)\\b\\(\\s-+\\)[^\\s]")
-               (modes  . '(oz-modes))))
+               (regexp . "\\b\\(?:if\\|elseif\\)\\b\\(\\s-+\\)[^\\s]")
+               (modes  . '(oz-mode))))
 
 (add-to-list 'align-dq-string-modes    'oz-mode)
 (add-to-list 'align-sq-string-modes    'oz-mode)
