@@ -35,6 +35,7 @@
 (require 'smartparens-lua)
 (require 'smartparens-latex)
 (require 'smartparens-oz)
+(require 'smartparens-octave)
 
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
