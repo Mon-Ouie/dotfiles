@@ -56,6 +56,8 @@
 (define-key smartparens-mode-map (kbd "C-»") 'sp-select-next-thing-exchange)
 (define-key smartparens-mode-map (kbd "C-M-»") 'sp-select-next-thing)
 
+(global-undo-tree-mode)
+
 (require 'linum)
 (global-linum-mode t)
 
