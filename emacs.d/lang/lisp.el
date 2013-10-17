@@ -20,8 +20,10 @@
                             ac-sources))))
 
 ;; Clojure
-(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-compliment-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-compliment-setup)
+
+(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-compliment-popup-doc)
 
 (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
 
