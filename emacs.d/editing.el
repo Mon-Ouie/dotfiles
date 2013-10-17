@@ -40,7 +40,7 @@
 (smartparens-global-mode t)
 (show-smartparens-global-mode t)
 
-(setq sp-show-pair-from-inside t)
+(setq sp-show-pair-from-inside nil)
 
 (setq sp-base-key-bindings 'paredit)
 (sp-use-paredit-bindings)
