@@ -18,12 +18,3 @@
 (setq sendmail-program "/usr/bin/msmtp")
 
 (require 'org-contacts)
-
-;; Switch to gnus' HTML renderer
-(defun mail-shr-html2text ()
-  (interactive)
-  (let ((doc (libxml-parse-xml-region (point-min) (point-max))))
-    (erase-buffer)
-    (shr-insert-document doc)))
-
-(fset 'html2text 'mail-shr-html2text)
