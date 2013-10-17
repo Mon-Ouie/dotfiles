@@ -179,3 +179,34 @@ makes)."
 ;; pcache, for gists
 (require 'pcache)
 (setq pcache-directory (config-dir ".var/pcache"))
+
+(defvar scratch-major-modes
+  '((elisp . emacs-lisp-mode)
+    (ruby . ruby-mode)
+    (haskell . haskell-mode)
+    (lisp . lisp-mode)
+    (clojure . clojure-mode)
+    (c . c-mode)
+    (octave . octave-mode)
+    (oz . oz-mode)
+    (org . org-mode)
+    (text . text-mode)
+    (latex . latex-mode))
+  "An alist mapping language names to mode names for `new-scratch'")
+
+(defun new-scratch (mode-name)
+  "Creates a new scratch buffer using MODE-NAME, which should be a key in
+`scratch-major-modes'."
+  (interactive
+   (list (intern
+          (completing-read "Scratch language: "
+                           (mapcar (lambda (x) (symbol-name (car x)))
+                                   scratch-major-modes)))))
+  (let ((mode (cdr (assoc mode-name scratch-major-modes))))
+   (labels ((find-buffer-name (i)
+                              (let ((name (format "*%s scratch <%d>*"
+                                                  mode-name i)))
+                                (if (not (get-buffer name)) name
+                                  (find-buffer-name (1+ i))))))
+     (switch-to-buffer (find-buffer-name 0))
+     (funcall mode))))
