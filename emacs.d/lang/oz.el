@@ -33,3 +33,5 @@
 (add-to-list 'align-dq-string-modes    'oz-mode)
 (add-to-list 'align-sq-string-modes    'oz-mode)
 (add-to-list 'align-open-comment-modes 'oz-mode)
+
+(add-hook 'oz-mode-hook 'turn-on-auto-fill)
