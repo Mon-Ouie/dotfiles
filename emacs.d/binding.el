@@ -19,6 +19,8 @@
 (global-set-key (kbd "M-≤") 'previous-buffer)
 (global-set-key (kbd "M-≥") 'next-buffer)
 
+(global-set-key (kbd "M-è") 'delete-indentation)
+
 (global-set-key (kbd "C-c i") 'magit-status)
 
 (global-set-key (kbd "<backtab> <tab>") 'yas/expand-temp-snippet)
