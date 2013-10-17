@@ -17,3 +17,4 @@ backup/
 *.pkg.tar.xz
 pkg/
 src/
+/emacs.d/feeds.el

@@ -32,6 +32,7 @@
 (load-file (config-file "editing.el"))
 (load-file (config-file "completion.el"))
 (load-file (config-file "mail.el"))
+(load-file (config-file "rss.el"))
 (load-file (config-file "lang.el"))
 (load-file (config-file "binding.el"))
 
