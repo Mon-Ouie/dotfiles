@@ -33,8 +33,8 @@
 	       :post-init (slime-setup))
 
         (:name nrepl)
-        (:name nrepl-ac :type git
-	       :url "https://github.com/clojure-emacs/ac-nrepl.git")
+        (:name ac-nrepl-compliment :type git
+               :url "https://github.com/alexander-yakushev/ac-nrepl-compliment")
         (:name clojure-mode)
 
         (:name yari)
@@ -89,6 +89,9 @@
         (:name gist)
         (:name helm)
         (:name helm-ls-git :type git
-               :url "git://github.com/emacs-helm/helm-ls-git.git")))
+               :url "git://github.com/emacs-helm/helm-ls-git.git")
+        (:name elfeed :type git
+               :url "git://github.com/skeeto/elfeed.git")
+        (:name undo-tree)))
 
 (el-get 'sync)
