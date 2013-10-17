@@ -210,3 +210,5 @@ makes)."
                                   (find-buffer-name (1+ i))))))
      (switch-to-buffer (find-buffer-name 0))
      (funcall mode))))
+
+(require 'helm-mpd)
