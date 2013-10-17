@@ -48,6 +48,7 @@
 
 (require 'smartparens)
 (set-face-background 'sp-show-pair-match-face "#434E97")
+(set-face-foreground 'sp-show-pair-match-face "white")
 
 ;; Colors in compile-mode
 (require 'ansi-color)
