@@ -33,5 +33,6 @@
         d = diff
         sm = submodule
         cl = clone
+        partial-add = add -p
 [include]
         path = code/dotfiles/github.gitconfig
