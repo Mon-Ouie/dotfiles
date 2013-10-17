@@ -65,4 +65,5 @@
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+(require 'helm)
 (set-face-foreground 'helm-selection "white")
