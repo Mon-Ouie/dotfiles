@@ -138,8 +138,6 @@ pairs containing information about songs."
                        (format "playid %d\n" (helm-mpd-song-id song))))
 
 (defvar helm-source-mpd-songs
-  "A source that requests all the song and allows you to select one of them to
-be played."
   '((name . "MPD Songs")
     (init . (lambda ()
               (helm-mpd-open)
@@ -151,7 +149,9 @@ be played."
                               (cons (helm-mpd-song-format song)
                                     song))
                             (car helm-mpd-song-queue))))
-    (action . (("Play" . helm-mpd-song-play)))))
+    (action . (("Play" . helm-mpd-song-play))))
+  "A source that requests all the song and allows you to select one of them to
+be played.")
 
 (defun mpd ()
   "Starts helm with `helm-source-mpd-songs'."
