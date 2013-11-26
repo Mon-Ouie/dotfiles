@@ -162,3 +162,7 @@
 (require 'guide-key)
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
 (guide-key-mode t)
+
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-c C-c M-x") 'execute-kbd-macro)
