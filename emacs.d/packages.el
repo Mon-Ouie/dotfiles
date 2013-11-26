@@ -92,6 +92,10 @@
                :url "git://github.com/emacs-helm/helm-ls-git.git")
         (:name elfeed :type git
                :url "git://github.com/skeeto/elfeed.git")
-        (:name undo-tree)))
+        (:name undo-tree)
+        (:name flx :type git
+               :url "git://github.com/lewang/flx.git")
+        (:name ido-vertical-mode :type git
+               :url "git://github.com/emacsmirror/ido-vertical-mode.git")))
 
 (el-get 'sync)

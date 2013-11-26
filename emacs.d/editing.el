@@ -23,6 +23,14 @@
 
 (require 'ido)
 (ido-mode t)
+(ido-everywhere t)
+
+(require 'flx-ido)
+(flx-ido-mode t)
+(setq ido-use-faces nil) ;; Displays flx highlight
+
+(require 'ido-vertical-mode)
+(ido-vertical-mode t)
 
 ;; thanks to all those programs that use ~ and not ~/.config, ~ ends up being way
 ;; too big…
