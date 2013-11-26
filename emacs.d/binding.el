@@ -158,3 +158,7 @@
 (require 'visual-regexp)
 (global-set-key (kbd "M-%") 'vr/query-replace)
 (global-set-key (kbd "M-/") 'vr/replace)
+
+(require 'guide-key)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
+(guide-key-mode t)

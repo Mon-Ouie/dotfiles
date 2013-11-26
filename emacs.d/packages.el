@@ -98,6 +98,9 @@
         (:name ido-vertical-mode :type git
                :url "git://github.com/emacsmirror/ido-vertical-mode.git")
         (:name visual-regexp :type git
-               :url "git://github.com/benma/visual-regexp.el.git")))
+               :url "git://github.com/benma/visual-regexp.el.git")
+        (:name guide-key :type git
+               :url "git://github.com/kbkbkbkb1/guide-key.git")
+        (:name popwpin)))
 
 (el-get 'sync)
