@@ -67,3 +67,10 @@
 
 (require 'helm)
 (set-face-foreground 'helm-selection "white")
+
+(require 'visual-regexp)
+(set-face-foreground 'vr/group-0 "white")
+(set-face-foreground 'vr/group-1 "white")
+(set-face-foreground 'vr/group-2 "white")
+(set-face-foreground 'vr/match-0 "white")
+(set-face-foreground 'vr/match-1 "white")
