@@ -154,3 +154,7 @@
 (require 'gist-paste)
 (global-set-key (kbd "C-c C-u") 'gist-region-or-buffer-private-paste)
 (global-set-key (kbd "C-c C-U") 'gist-region-or-buffer-paste)
+
+(require 'visual-regexp)
+(global-set-key (kbd "M-%") 'vr/query-replace)
+(global-set-key (kbd "M-/") 'vr/replace)

@@ -96,6 +96,8 @@
         (:name flx :type git
                :url "git://github.com/lewang/flx.git")
         (:name ido-vertical-mode :type git
-               :url "git://github.com/emacsmirror/ido-vertical-mode.git")))
+               :url "git://github.com/emacsmirror/ido-vertical-mode.git")
+        (:name visual-regexp :type git
+               :url "git://github.com/benma/visual-regexp.el.git")))
 
 (el-get 'sync)
