@@ -11,6 +11,8 @@
     "-I/usr/include/c++/4.7.1/x86_64-unknown-linux-gnu/32/"
     "-I/usr/include/ruby-1.9.1"
     "-I/usr/include/ruby-1.9.1/x86_64-linux"
+    "-I/usr/include/ruby-2.0.0"
+    "-I/usr/include/ruby-2.0.0/x86_64-linux"
     "-I/usr/include/freetype2"
     "-I/usr/include/Qt"
     "-I/usr/include/Qt3Support"
