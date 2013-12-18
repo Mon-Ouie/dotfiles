@@ -35,6 +35,8 @@ export PATH="$PATH:$HOME/prog"
 export PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin"
 export PATH="$PATH:/usr/bin/vendor_perl"
 
+export PATH="$HOME/.cabal/bin:$PATH"
+
 export CFLAGS="-I/usr/local/include"
 export LDFLAGS="-L/usr/local/lib"
 export MAKEFLAGS="-j 5"
