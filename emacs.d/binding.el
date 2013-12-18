@@ -160,9 +160,11 @@
 (global-set-key (kbd "M-/") 'vr/replace)
 
 (require 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-c p"))
 (guide-key-mode t)
 
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-c C-c M-x") 'execute-kbd-macro)
+
+(global-set-key (kbd "M-g") 'goto-line)
