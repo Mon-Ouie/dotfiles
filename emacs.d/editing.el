@@ -220,3 +220,6 @@ makes)."
      (funcall mode))))
 
 (require 'helm-mpd)
+
+(require 'projectile)
+(projectile-global-mode)

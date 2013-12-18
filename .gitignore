@@ -18,3 +18,4 @@ backup/
 pkg/
 src/
 /emacs.d/feeds.el
+/emacs.d/projectile-bookmarks.eld
