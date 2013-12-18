@@ -28,6 +28,7 @@ aspell-uk
 aspell-nl
 ocaml
 ghc
+cabal-install
 sbcl
 clojure
 xclip
