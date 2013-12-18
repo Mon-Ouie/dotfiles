@@ -101,6 +101,13 @@
                :url "git://github.com/benma/visual-regexp.el.git")
         (:name guide-key :type git
                :url "git://github.com/kbkbkbkb1/guide-key.git")
-        (:name popwpin)))
+        (:name popwpin)
+        (:name projectile :type git
+               :url "git://github.com/bbatsov/projectile.git")
+        (:name pkg-info :type elpa)
+        (:name ack-and-a-half :type git
+               :url "git://github.com/jhelwig/ack-and-a-half.git")
+        (:name dash)
+        (:name epl :type elpa)))
 
 (el-get 'sync)
