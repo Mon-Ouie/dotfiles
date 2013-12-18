@@ -422,6 +422,7 @@ grab "W-f",      "firefox"
 grab "W-e",      "emacs"
 
 grab "XF86AudioPlay", "mpc toggle"
+grab "XF86AudioPause", "mpc toggle"
 grab "XF86AudioNext", "mpc next"
 grab "XF86AudioPrev", "mpc prev"
 grab "XF86AudioStop", "mpc stop"
