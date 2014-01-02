@@ -26,7 +26,7 @@
       (insert " do")
       (save-excursion (newline-and-indent))
       (backward-char 3))
-     ((member id '("class" "meth" "or" "dis" "cond" "not"))
+     ((member id '("class" "try" "meth" "or" "dis" "cond" "not"))
       (save-excursion (newline-and-indent))
       (insert " "))
      ((member id '("fun" "proc" "thread" "raise" "functor" "lock"))
@@ -114,6 +114,11 @@
                  :pre-handlers '(sp-oz-pre-handler)
                  :post-handlers '(sp-oz-post-keyword-insert))
   (sp-local-pair "class" "end"
+                 :when '(("SPC" "RET" "<evil-ret>"))
+                 :unless '(sp-oz-in-string-or-word-p)
+                 :pre-handlers '(sp-oz-pre-handler)
+                 :post-handlers '(sp-oz-post-keyword-insert))
+  (sp-local-pair "try" "end"
                  :when '(("SPC" "RET" "<evil-ret>"))
                  :unless '(sp-oz-in-string-or-word-p)
                  :pre-handlers '(sp-oz-pre-handler)
