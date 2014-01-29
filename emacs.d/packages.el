@@ -16,6 +16,10 @@
         (:name haskell-mode :type git
 	       :url "https://github.com/jwiegley/haskell-mode.git"
 	       :load "haskell-mode.el")
+        (:name structured-haskell-mode :type git
+               :url "https://github.com/chrisdone/structured-haskell-mode.git"
+               :build '(("cabal" "install"))
+               :load-path ("elisp"))
         (:name cmake-mode)
         (:name lua-mode)
         (:name markdown-mode)

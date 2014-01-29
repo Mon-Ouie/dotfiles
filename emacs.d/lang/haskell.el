@@ -5,3 +5,6 @@
 (add-hook 'haskell-mode-hook 'flymake-mode)
 
 (setq haskell-saved-check-command "")
+
+(require 'shm)
+(add-hook 'haskell-mode-hook 'structured-haskell-mode)

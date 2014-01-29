@@ -29,6 +29,7 @@ aspell-nl
 ocaml
 ghc
 cabal-install
+happy
 sbcl
 clojure
 xclip
