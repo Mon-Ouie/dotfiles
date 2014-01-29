@@ -13,7 +13,7 @@
 (setq org-export-latex-packages-alist ; (options package-name required-for-previews)
       '(("" "minted" nil) ;; syntax highlighting
         ("" "mhchem" t)   ;; typesetting chemistry
-        ("" "tikz" nil)   ;; Graphs (breaks reviews)
+        ("" "tikz" nil)   ;; Graphs (breaks previews)
         ("european" "circuitikz" nil)
         ("" "pgfplots" nil)
         ("" "amsmath" t)  ;; Some math symbols
