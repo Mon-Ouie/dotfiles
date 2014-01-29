@@ -30,7 +30,7 @@
           ("\\.bmp\\'" . ,use-default)
           (auto-mode . emacs)
           ("\\.mm\\'" . default)
-          ("\\.x?html?\\'" . default))))
+          ("\\.x?html?\\'" . ,use-default))))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
