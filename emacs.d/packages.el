@@ -112,6 +112,7 @@
         (:name ack-and-a-half :type git
                :url "git://github.com/jhelwig/ack-and-a-half.git")
         (:name dash)
-        (:name epl :type elpa)))
+        (:name epl :type elpa)
+        (:name htmlize)))
 
 (el-get 'sync)
