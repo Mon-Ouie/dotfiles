@@ -96,11 +96,11 @@ pairs containing information about songs."
         (helm-mpd-push-current-song)
         (setq helm-mpd-current-song (make-helm-mpd-song :filename value)))
        ((string= field "Time")
-        (setf (helm-mpd-song-time helm-mpd-current-song) (parse-integer value)))
+        (setf (helm-mpd-song-time helm-mpd-current-song) (string-to-number value)))
        ((string= field "Artist")
         (setf (helm-mpd-song-artist helm-mpd-current-song) value))
        ((string= field "Id") (setf (helm-mpd-song-id helm-mpd-current-song)
-                                   (parse-integer value)))
+                                   (string-to-number value)))
        ((string= field "Title")
         (setf (helm-mpd-song-title helm-mpd-current-song) value)))))))
 
