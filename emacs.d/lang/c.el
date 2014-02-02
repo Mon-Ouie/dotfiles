@@ -89,7 +89,7 @@
 
 (require 'flymake)
 
-(defun flymake-clang-init (compiler)
+(defun flymake-clang-init (compiler &rest args)
   (let* ((temp-file
           (flymake-init-create-temp-buffer-copy
            'flymake-create-temp-intemp))
@@ -100,7 +100,8 @@
          (local-directory
           (file-name-directory buffer-file-name)))
     (list compiler
-          (append `("-fsyntax-only" ;; Don't compile my code
+          (append args
+                  `("-fsyntax-only" ;; Don't compile my code
 
                     ;; Make clang output look like GCC (except for the message :)
                     "-fno-color-diagnostics"
@@ -133,7 +134,7 @@
   (flymake-clang-init "clang"))
 
 (defun flymake-cpp-init ()
-  (flymake-clang-init "clang++"))
+  (flymake-clang-init "clang++" "-std=c++11"))
 
 (push '(".+\\.c$" flymake-c-init) flymake-allowed-file-name-masks)
 (push '(".+\\.h$" flymake-c-init) flymake-allowed-file-name-masks)
