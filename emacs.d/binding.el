@@ -23,6 +23,8 @@
 
 (global-set-key (kbd "C-c i") 'magit-status)
 
+(global-set-key (kbd "C-x C-M-f") 'find-file-at-point)
+
 (global-set-key (kbd "<backtab> <tab>") 'yas/expand-temp-snippet)
 (global-set-key (kbd "<backtab> s") 'yas/save-temp-snippet)
 

@@ -37,6 +37,9 @@
     "-I/usr/include/QtXmlPatterns"
     "-I/usr/lib/clang/3.1/include"))
 
+(require 'ffap)
+(setq ffap-c-path (mapcar (lambda (s) (subseq s 2)) c-include-dirs))
+
 (defun c-include-dirs-string ()
   (mapconcat #'identity c-include-dirs " "))
 
