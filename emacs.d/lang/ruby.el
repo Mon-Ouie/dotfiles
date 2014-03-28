@@ -131,3 +131,32 @@
 
 ;; ERB templates
 (require 'rhtml-mode)
+
+;;; Find path to files
+
+(setq ruby-ffap-paths '("/usr/lib/ruby/2.1.0"
+                        "/usr/lib/ruby/site_ruby/2.1.0"
+                        "/usr/lib/ruby/site_ruby/2.1.0/x86_64-linux"
+                        "."
+                        ".."
+                        "../.."))
+
+(dolist (gem-dir (list "/usr/lib/ruby/gems/2.1.0/gems"
+                       (concat (getenv "HOME") "/.gem/ruby/2.1.0/gems")))
+  (dolist (dir (directory-files gem-dir))
+    (dolist (include-path '("lib"))
+      (let ((total-path (concat gem-dir "/" dir "/" include-path)))
+        (when (file-directory-p total-path)
+          (setq ruby-ffap-paths
+                (append ruby-ffap-paths (list total-path))))))))
+
+(defun ruby-ffap (name)
+  (block 'ruby-ffap
+   (dolist (dir ruby-ffap-paths)
+     (dolist (ext '("rb" "so" "dll"))
+       (let ((file-name (concat dir "/" name "." ext)))
+         (if (file-exists-p file-name)
+             (return-from 'ruby-ffap file-name)))))
+   nil))
+
+(add-to-list 'ffap-alist '(ruby-mode . ruby-ffap))
