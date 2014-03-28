@@ -18,7 +18,8 @@
         ("" "pgfplots" nil)
         ("" "amsmath" t)  ;; Some math symbols
         ("" "mathtools" t)
-        ("" "relsize" t)))
+        ("" "relsize" t)
+        ("" "systeme" t)))
 
 (let ((use-default (if on-osx "open %s" "xdg-open %s")))
   (setq org-file-apps
