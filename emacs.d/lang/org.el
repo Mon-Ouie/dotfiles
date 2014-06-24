@@ -36,7 +36,10 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
-   (gnuplot . t)))
+   (gnuplot . t)
+   (plantuml . t)))
+
+(setq org-plantuml-jar-path (expand-file-name "/opt/plantuml/plantuml.jar"))
 
 (setq org-export-latex-minted-langs
       '((emacs-lisp "common-lisp")
