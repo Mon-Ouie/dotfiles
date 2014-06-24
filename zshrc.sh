@@ -166,7 +166,7 @@ md-unindent() {
 }
 
 mount-iso() { # I always forget the syntax of that command
-    sudo mount -o loop -t iso9660 "$1" /mnt/iso
+    sudo mount -o loop -t iso9660 "$1" $2
 }
 
 sync-dir () {
