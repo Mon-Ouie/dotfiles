@@ -12,6 +12,7 @@ backup/
 /emacs.d/bookmarks
 /emacs.d/logs/
 /emacs.d/tramp
+/emacs.d/url
 /github.gitconfig
 *.sublet
 *.pkg.tar.xz
