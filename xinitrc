@@ -11,7 +11,7 @@ devmon -g &
 # For QGtkStyle
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-subtle 2>log &
+subtle -n 2>log &
 pid=$!
 
 if [ "$(mpc status|grep playing)" = "" ]; then
