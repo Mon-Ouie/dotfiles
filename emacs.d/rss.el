@@ -74,5 +74,11 @@ to it."
                                "' 2>/dev/null"))))
       (elfeed-search-update-entry entry))))
 
+(defun elfeed-save-and-quit ()
+  (interactive)
+  (elfeed-db-save)
+  (quit-window))
+
 (define-key elfeed-search-mode-map (kbd "o") 'elfeed-search-browse-url)
 (define-key elfeed-search-mode-map (kbd "w") 'elfeed-current-entry-watch)
+(define-key elfeed-search-mode-map (kbd "q") 'elfeed-save-and-quit)
