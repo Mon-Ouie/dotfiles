@@ -15,8 +15,15 @@
 (require 'ac-emacs-eclim-source)
 (add-hook 'eclim-mode-hook
           (lambda ()
-            (add-to-list 'ac-sources 'ac-source-emacs-eclim)
-            (add-to-list 'ac-sources 'ac-source-emacs-eclim-c-dot)))
+            (add-to-list 'ac-sources 'ac-source-emacs-eclim)))
+(add-hook 'java-mode-hook (lambda ()
+                            (add-to-list 'ac-sources 'ac-source-gtags)
+                            (ggtags-mode)))
+(setq android-mode-sdk-dir "/opt/android-sdk")
+
+(let ((eclim-path "/usr/share/eclipse/plugins/org.eclim_2.3.2.63-ge44e750/bin"))
+  (setq eclim-executable (concat eclim-path "/eclim")
+        eclimd-executable (concat eclim-path "/eclimd")))
 
 (defun start-eclim ()
   (interactive)
