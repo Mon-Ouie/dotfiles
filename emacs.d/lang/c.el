@@ -37,7 +37,8 @@
     "-I/usr/include/QtWebKit"
     "-I/usr/include/QtXml"
     "-I/usr/include/QtXmlPatterns"
-    "-I/usr/lib/clang/3.1/include"))
+    "-I/usr/lib/clang/3.1/include"
+    "-I../lib/"))
 
 (require 'ffap)
 (setq ffap-c-path (mapcar (lambda (s) (subseq s 2)) c-include-dirs))
