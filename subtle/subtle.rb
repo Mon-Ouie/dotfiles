@@ -88,15 +88,14 @@ set :wmname, "LG3D"
 #
 
 screen 1 do
-  top [:views, :title, :spacer, :keychain, :tray, :sublets]
+  top [:views, :center, :title, :center, :spacer, :keychain, :tray, :sublets]
   bottom []
 end
 
-# Example for a second screen:
-#screen 2 do
-#  top    [ :views, :title, :spacer ]
-#  bottom [ ]
-#end
+screen 2 do
+  top [:views, :title, :spacer, :sublets]
+  bottom []
+end
 
 def wallpaper(file)
   system "feh --bg-center #{file}"
@@ -357,7 +356,8 @@ gravity :gimp_dock,      [  90,   0,  10, 100 ]
 #
 
 1.upto(12) do |n|
-  grab "A-F#{n}",  :"ViewJump#{n}"
+  grab "A-F#{n}",  :"ViewSwitch#{n}"
+  grab "W-F#{n}",  :"ViewJump#{n}"
 end
 
 grab "W-C-r",   :SubtleReload
