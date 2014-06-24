@@ -152,3 +152,5 @@
 
 (require 'xcscope)
 (define-key c-mode-base-map (kbd "M-.") 'cscope-find-global-definition)
+
+(setq gdb-many-windows t)
