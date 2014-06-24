@@ -69,9 +69,10 @@ to it."
                      (replace-regexp-in-string
                       "\\s-+" ""
                       (shell-command-to-string
-                       (concat "youtube-dl -g '"
+                       (concat "youtube-dl --prefer-insecure -g '"
                                url
-                               "' 2>/dev/null")))))))
+                               "' 2>/dev/null"))))
+      (elfeed-search-update-entry entry))))
 
 (define-key elfeed-search-mode-map (kbd "o") 'elfeed-search-browse-url)
 (define-key elfeed-search-mode-map (kbd "w") 'elfeed-current-entry-watch)
