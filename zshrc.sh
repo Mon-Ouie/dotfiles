@@ -187,7 +187,7 @@ sync-file () {
 
 # Actually works with a few other websites.
 yt() {
-    mplayer $(youtube-dl -g "$1")
+    play-dl $(youtube-dl --no-playlist --prefer-insecure -g "$1")
 }
 
 # Dear websites,
