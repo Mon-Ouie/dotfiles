@@ -159,4 +159,5 @@
              (return-from 'ruby-ffap file-name)))))
    nil))
 
+(require 'ffap)
 (add-to-list 'ffap-alist '(ruby-mode . ruby-ffap))

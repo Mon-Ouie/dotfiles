@@ -1,6 +1,26 @@
 (require 'cc-mode)
 
-(setq c-include-dirs
+(defvar c-include-dirs nil)
+(make-variable-buffer-local 'c-include-dirs)
+
+(defun set-c-include-dirs (include-dirs commands other-flags)
+  (require 'ffap)  (make-variable-buffer-local 'ffap-c-path)
+  (require 'eldoc) (make-variable-buffer-local 'c-eldoc-includes)
+  (let ((all-flags (append include-dirs other-flags)))
+    (setq c-include-dirs include-dirs)
+    (dolist (command commands)
+      (let* ((flags (split-string (shell-command-to-string command)))
+             (includes (remove-if-not
+                        (lambda (e) (string-match "\\`-I" e))
+                        flags)))
+        (setq c-include-dirs (append c-include-dirs includes))
+        (setq all-flags (append all-flags flags))))
+
+    (setq ffap-c-path (mapcar (lambda (s) (subseq s 2)) c-include-dirs))
+    (setq ac-clang-flags all-flags)
+    (setq c-eldoc-includes (mapconcat #'identity all-flags " "))))
+
+(setq c-default-include-dirs
   '("-I."
     "-I.."
     "-I../src"
@@ -40,11 +60,30 @@
     "-I/usr/lib/clang/3.1/include"
     "-I../lib/"))
 
-(require 'ffap)
-(setq ffap-c-path (mapcar (lambda (s) (subseq s 2)) c-include-dirs))
+(setq c-default-include-commands
+      '("pkg-config --cflags sdl"
+        "pkg-config --cflags gtk+-2.0"))
 
-(defun c-include-dirs-string ()
-  (mapconcat #'identity c-include-dirs " "))
+(set (make-variable-buffer-local 'c-local-include-dirs) nil)
+(set (make-variable-buffer-local 'c-local-flags) nil)
+(set (make-variable-buffer-local 'c-local-commands) nil)
+
+(defun c-configure-include-dirs ()
+  (interactive)
+  (let ((project-include (locate-dominating-file (buffer-file-name)
+                                                 "include")))
+    (when project-include
+      (add-to-list 'c-local-include-dirs
+                   (concat "-I" (expand-file-name project-include)
+                           "include"))))
+  (add-to-list 'c-local-include-dirs
+               (concat "-I" (file-name-directory (buffer-file-name))))
+  (set-c-include-dirs (append c-local-include-dirs c-include-dirs)
+                      (append c-local-commands c-default-include-commands)
+                      c-local-flags))
+
+(add-hook 'c-mode-common-hook
+          'c-configure-include-dirs)
 
 (add-hook 'c-mode-common-hook 'turn-on-auto-fill)
 (add-hook 'c-mode-common-hook 'rainbow-mode)
@@ -73,8 +112,6 @@
              (unless (string= major-mode "java-mode")
                (setq ac-sources (append '(ac-source-clang) ac-sources)))))
 
-(setq ac-clang-flags c-include-dirs)
-
 (defun objc-wrap-brackets (&optional count)
   (interactive "*p")
   (backward-up-list count)
@@ -86,9 +123,6 @@
 (define-key objc-mode-map (kbd "C-c a") 'objc-wrap-brackets)
 (define-key objc-mode-map (kbd "C-c b") 'xcode/build-compile)
 
-(require 'c-eldoc)
-(setq c-eldoc-includes
-      (concat "`pkg-config gtk+-2.0 --cflags` " (c-include-dirs-string)))
 (add-hook 'c-mode-common-hook 'c-turn-on-eldoc-mode)
 
 ;; Flymake
