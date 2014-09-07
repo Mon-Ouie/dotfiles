@@ -20,12 +20,12 @@
                             ac-sources))))
 
 ;; Clojure
-(add-hook 'nrepl-mode-hook 'ac-nrepl-compliment-setup)
-(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-compliment-setup)
-
-(define-key nrepl-interaction-mode-map (kbd "C-c C-d") 'ac-nrepl-compliment-popup-doc)
-
-(add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)
+(require 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'cider-mode))
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
 (dolist (hook '(lisp-mode-hook emacs-lisp-mode-hook clojure-mode-hook))
   (add-hook hook 'turn-on-auto-fill)

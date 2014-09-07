@@ -36,10 +36,10 @@
 	       :compile (".")
 	       :post-init (slime-setup))
 
-        (:name nrepl)
-        (:name ac-nrepl-compliment :type git
-               :url "https://github.com/alexander-yakushev/ac-nrepl-compliment")
         (:name clojure-mode)
+        (:name cider)
+        (:name ac-cider :type git
+               :url "https://github.com/clojure-emacs/ac-cider.git")
 
         (:name yari)
 	(:name git-modes)
