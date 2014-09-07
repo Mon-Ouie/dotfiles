@@ -71,6 +71,11 @@
 (set (make-variable-buffer-local 'c-local-flags) nil)
 (set (make-variable-buffer-local 'c-local-commands) nil)
 
+(defun c-check-local-flags (x) (every 'stringp x))
+
+(put 'c-local-include-dirs 'safe-local-variable 'c-check-local-flags)
+(put 'c-local-flags 'safe-local-variable 'c-check-local-flags)
+
 (defun c-configure-include-dirs ()
   (interactive)
   (hack-local-variables)
