@@ -3,6 +3,8 @@
 (defvar c-include-dirs nil)
 (make-variable-buffer-local 'c-include-dirs)
 
+(require 'auto-complete-clang-async)
+
 (defun set-c-include-dirs (include-dirs commands other-flags)
   (require 'ffap)  (make-variable-buffer-local 'ffap-c-path)
   (require 'eldoc) (make-variable-buffer-local 'c-eldoc-includes)
@@ -17,7 +19,7 @@
         (setq all-flags (append all-flags flags))))
 
     (setq ffap-c-path (mapcar (lambda (s) (subseq s 2)) c-include-dirs))
-    (setq ac-clang-flags all-flags)
+    (setq ac-clang-cflags all-flags)
     (setq c-eldoc-includes (mapconcat #'identity all-flags " "))))
 
 (setq c-default-include-dirs
@@ -58,6 +60,7 @@
     "-I/usr/include/QtXml"
     "-I/usr/include/QtXmlPatterns"
     "-I/usr/lib/clang/3.1/include"
+    "-I/usr/lib/clang/3.4.2/include"
     "-I../lib/"))
 
 (setq c-default-include-commands
@@ -70,6 +73,7 @@
 
 (defun c-configure-include-dirs ()
   (interactive)
+  (hack-local-variables)
   (let ((project-include (locate-dominating-file (buffer-file-name)
                                                  "include")))
     (when project-include
@@ -78,7 +82,7 @@
                            "include"))))
   (add-to-list 'c-local-include-dirs
                (concat "-I" (file-name-directory (buffer-file-name))))
-  (set-c-include-dirs (append c-local-include-dirs c-include-dirs)
+  (set-c-include-dirs (append c-local-include-dirs c-default-include-dirs)
                       (append c-local-commands c-default-include-commands)
                       c-local-flags))
 
@@ -106,11 +110,12 @@
 ;; Auto-completion for ObjC
 (setq ac-modes (append '(objc-mode) ac-modes))
 
-(require 'auto-complete-clang)
 (add-hook 'c-mode-common-hook
           '(lambda ()
              (unless (string= major-mode "java-mode")
-               (setq ac-sources (append '(ac-source-clang) ac-sources)))))
+               (c-configure-include-dirs)
+               (setq ac-sources '(ac-source-clang-async))
+               (ac-clang-launch-completion-process))))
 
 (defun objc-wrap-brackets (&optional count)
   (interactive "*p")

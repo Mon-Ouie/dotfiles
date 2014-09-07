@@ -73,7 +73,7 @@
         (:name yasnippet :type elpa)
 
         (:name auto-complete :type elpa)
-        (:name auto-complete-clang)
+        (:name clang-complete-async)
 
         (:name deft :type git
                :url "git://jblevins.org/git/deft.git"
