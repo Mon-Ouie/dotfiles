@@ -7,7 +7,6 @@ xorg-xauth
 ruby
 ruby-docs
 jshon
-aura
 sudo
 weechat
 subtle-hg
@@ -35,6 +34,7 @@ clojure
 xclip
 zathura
 ncmpcpp
+mpc
 subversion
 cvs
 htop
@@ -59,8 +59,7 @@ texlive-lang
 gnuplot
 dictd
 eclim
-mu4-git
-bepo-keymaps
+mu4e
 cscope
 scrot
 youtube-dl
