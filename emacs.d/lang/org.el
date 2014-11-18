@@ -8,9 +8,9 @@
 (setq org-src-fontify-natively t)
 (setq org-hide-leading-stars t)
 
-(setq org-export-latex-listings 'minted)
+(setq org-latex-listings 'minted)
 
-(setq org-export-latex-packages-alist ; (options package-name required-for-previews)
+(setq org-latex-packages-alist ; (options package-name required-for-previews)
       '(("" "minted" nil) ;; syntax highlighting
         ("" "mhchem" t)   ;; typesetting chemistry
         ("" "tikz" nil)   ;; Graphs (breaks previews)
@@ -41,7 +41,7 @@
 
 (setq org-plantuml-jar-path (expand-file-name "/opt/plantuml/plantuml.jar"))
 
-(setq org-export-latex-minted-langs
+(setq org-latex-minted-langs
       '((emacs-lisp "common-lisp")
         (lisp "common-lisp")
         (cc "c++")
@@ -49,7 +49,7 @@
         (shell-script "bash")
         (caml "ocaml")))
 
-(setq org-export-html-postamble nil)
+(setq org-html-postamble nil)
 
 (setq org-format-latex-options
       '(:foreground default
@@ -78,7 +78,7 @@
    :EMAIL: %(org-contacts-template-email)
    :END:"))
 
-(require 'org-latex)
+(require 'ox-latex)
 
 (setq memoir-header-code
                "\\documentclass[11pt]{memoir}
@@ -86,7 +86,7 @@
 \\pagestyle{Ruled}
 ")
 
-(add-to-list 'org-export-latex-classes
+(add-to-list 'org-latex-classes
              `("memoir" ,memoir-header-code
 
                ("\\chapter{%s}" . "\\chapter*{%s}")
@@ -95,7 +95,7 @@
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")))
 
-(add-to-list 'org-export-latex-classes
+(add-to-list 'org-latex-classes
              `("memoir-with-part" ,memoir-header-code
 
                ("\\part{%s}" . "\\part*{%s}")
