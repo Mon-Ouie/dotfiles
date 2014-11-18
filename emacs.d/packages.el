@@ -28,15 +28,17 @@
         (:name zencoding-mode)
 
 	(:name slime
-	       :description "Superior Lisp Interaction Mode for Emacs"
-	       :type github
-	       :autoloads "slime-autoloads"
-	       :pkgname "nablaone/slime"
-	       :load-path ("." "contrib")
-	       :compile (".")
-	       :post-init (slime-setup))
+	       ;; :description "Superior Lisp Interaction Mode for Emacs"
+	       ;; :type github
+	       ;; :autoloads "slime-autoloads"
+	       ;; :pkgname "nablaone/slime"
+	       ;; :load-path ("." "contrib")
+	       ;; :compile (".")
+	       ;; :post-init (slime-setup)
+	       )
 
         (:name clojure-mode)
+        (:name queue :type elpa)
         (:name cider)
         (:name ac-cider :type git
                :url "https://github.com/clojure-emacs/ac-cider.git")
@@ -61,11 +63,11 @@
                :url "https://gist.github.com/raw/759130/a85ebbc6bfc5fbab54677f4236e902b2da7bf41f/flymake-fringe-icons.el"
                :features flymake-fringe-icons)
 
-        (:name ispell-multi :type http
-               :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/ispell-multi.el")
-        (:name flyspell-babel :type http
-               :depends ispell-multi
-               :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/flyspell-babel.el")
+        ;; (:name ispell-multi :type http
+        ;;        :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/ispell-multi.el")
+        ;; (:name flyspell-babel :type http
+        ;;        :depends ispell-multi
+        ;;        :url "http://www.dur.ac.uk/p.j.heslin/Software/Emacs/Download/flyspell-babel.el")
 
         (:name color-theme)
 
@@ -105,16 +107,21 @@
                :url "git://github.com/benma/visual-regexp.el.git")
         (:name guide-key :type git
                :url "git://github.com/kbkbkbkb1/guide-key.git")
-        (:name popwpin)
+        (:name popwin)
+        (:name s)
         (:name projectile :type git
                :url "git://github.com/bbatsov/projectile.git")
         (:name pkg-info :type elpa)
-        (:name ack-and-a-half :type git
-               :url "git://github.com/jhelwig/ack-and-a-half.git")
+        ;; (:name ack-and-a-half :type git
+        ;;        :url "git://github.com/jhelwig/ack-and-a-half.git")
         (:name dash)
         (:name epl :type elpa)
         (:name htmlize)
         (:name ggtags :type elpa)
-        ))
+        (:name smex)))
 
 (el-get 'sync)
+
+;; (dolist (package el-get-sources)
+;;   (let ((name (getf package :name)))
+;;     (el-get-install name)))
