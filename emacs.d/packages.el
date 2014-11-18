@@ -112,8 +112,7 @@
         (:name projectile :type git
                :url "git://github.com/bbatsov/projectile.git")
         (:name pkg-info :type elpa)
-        ;; (:name ack-and-a-half :type git
-        ;;        :url "git://github.com/jhelwig/ack-and-a-half.git")
+
         (:name dash)
         (:name epl :type elpa)
         (:name htmlize)
@@ -121,7 +120,3 @@
         (:name smex)))
 
 (el-get 'sync)
-
-;; (dolist (package el-get-sources)
-;;   (let ((name (getf package :name)))
-;;     (el-get-install name)))
