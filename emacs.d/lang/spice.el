@@ -1,6 +1,6 @@
 (require 'spice-mode)
 
-(add-hook 'spice-mode 'turn-on-eldoc-mode)
+(add-hook 'spice-mode-hook 'turn-on-eldoc-mode)
 
 (define-key calc-mode-map (kbd "G") nil)
 (define-key calc-mode-map (kbd "G t") 'spice-graph-trans)

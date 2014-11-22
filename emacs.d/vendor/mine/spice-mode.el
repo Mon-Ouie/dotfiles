@@ -732,7 +732,7 @@ Key bindings:
               :forward-token  #'spice-forward-token
               :backward-token #'spice-backward-token)
   (setq-local smie-indent-basic 'spice-indent-offset)
-  (setq-local 'eldoc-documentation-function 'spice-eldoc))
+  (setq-local eldoc-documentation-function 'spice-eldoc))
 
 (add-to-list 'auto-mode-alist '("\\.spice\\'" . spice-mode))
 (add-to-list 'auto-mode-alist '("\\.net\\'" . spice-mode))
