@@ -474,6 +474,10 @@
 
      (,(spice-match-argument "\\.sens" 0) 1 font-lock-builtin-face)
 
+     ;; External files
+     (,(spice-match-argument "\\.include" 0) 1 font-lock-builtin-face)
+     (,(spice-match-argument "\\.lib" 0) 1 font-lock-builtin-face)
+
      ;; Result
 
      (,(spice-match-argument "\\.print" 0) 1 font-lock-builtin-face)
@@ -594,7 +598,9 @@
     (".print" "[ac/dc/tran]" "values...")
     (".plot" "[ac/dc/tran]" "values...")
     (".subckt" "name" "nodes...")
-    (".model" "name" "type" "properties...")))
+    (".model" "name" "type" "properties...")
+    (".include" "file")
+    (".lib" "path" "name")))
 
 (defun spice-eldoc-to-function-name ()
   (block nil
