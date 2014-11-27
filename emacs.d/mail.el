@@ -17,4 +17,7 @@
 (setq message-sendmail-envelope-from 'header)
 (setq sendmail-program "/usr/bin/msmtp")
 
+(setq mu4e-compose-signature "")
+(setq mu4e-compose-signature-auto-include nil)
+
 (require 'org-contacts)
